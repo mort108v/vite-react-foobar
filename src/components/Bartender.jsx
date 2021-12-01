@@ -3,11 +3,11 @@
 const Bartender = (props) => {
   return (
     <div className={"bartender"}>
-      <h3>{props.bartender.name} </h3>
-      <p>{props.bartender.status} </p>
-      <p>{props.bartender.statusDetail} </p>
-      <p>{props.bartender.usingTap} </p>
-      <p>{props.bartender.servingCustomer} </p>
+      <h3>Name: {props.bartender.name} </h3>
+      <p>Status: {props.bartender.status} </p>
+      <p>Doing: {props.bartender.statusDetail} </p>
+      <p>Using Tap: {props.bartender.usingTap} </p>
+      <p>Serving Nr: {props.bartender.servingCustomer} </p>
     </div>
   );
 };
