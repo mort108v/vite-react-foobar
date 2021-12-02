@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import "./App.css";
 import Bartenders from "./components/Bartenders";
 import BeingServed from "./components/BeingServed";
+import BeingQueued from "./components/BeingQueued";
 import Barinfo from "./components/Barinfo";
 const BASE_URL = "https://six-foobar.herokuapp.com";
 
@@ -13,6 +14,9 @@ const App = () => {
   });
   const [beingServed, setBeingServed] = useState({
     serving: [{ id: "", startTime: "", order: [] }],
+  });
+  const [beingQueued, setBeingQueued] = useState({
+    queue: [{ id: "", startTime: "", order: [] }],
   });
 
   const [barInfo, setbarInfo] = useState({
@@ -26,6 +30,7 @@ const App = () => {
       setAllBartenders(await dataFromServer);
       setbarInfo(await dataFromServer);
       setBeingServed(await dataFromServer);
+      setBeingQueued(await dataFromServer);
     };
     getAllData();
     // setInterval(() => {
@@ -62,6 +67,10 @@ const App = () => {
         <h3>Being Served</h3>
         <div className="Serving-mode">
           <BeingServed onTheServe={beingServed} />
+        </div>
+        <h3>Being Queued</h3>
+        <div className="Queing-mode">
+          <BeingQueued onTheQue={beingQueued} />
         </div>
       </div>
     </div>
