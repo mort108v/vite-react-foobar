@@ -28,10 +28,10 @@ const App = () => {
       setBeingServed(await dataFromServer);
     };
     getAllData();
-    setInterval(() => {
-      getAllData();
-    }, 1000);
-  }, []);
+    // setInterval(() => {
+    //   getAllData();
+    // }, 1000);
+  }, [beingServed]);
 
   // Fetch Data
   const fetchData = async () => {
