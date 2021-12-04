@@ -8,14 +8,15 @@ const TimeTick = (props) => {
   //   new Date().toLocaleTimeString("da-DK");
   // };
   const barClosing = props.closingTime;
+  console.log(barClosing);
   const momentInTime = props.timeRightNow;
+  console.log(momentInTime);
 
   return (
     <div className="Time">
-      {}
       <h2>
-        | Time till closing{" "}
-        {moment(barClosing.diff(momentInTime)).format("HH:mm:ss")} ||
+        | Time till closing
+        {moment(barClosing).subtract(momentInTime).format("HH:mm:ss")} ||
       </h2>
     </div>
   );

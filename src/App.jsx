@@ -7,9 +7,8 @@ import "./App.css";
 // import "../SCSS/Main.scss";
 import Bartenders from "./components/Bartenders";
 import BeingServed from "./components/BeingServed";
-// import NewDoingState from "./components/NewDoingState";
 import BeingQueued from "./components/BeingQueued";
-// import TimeTick from "./components/Time";
+import TimeTick from "./components/TimeTick";
 import Barinfo from "./components/Barinfo";
 
 const BASE_URL = "https://six-foobar.herokuapp.com";
@@ -20,7 +19,6 @@ const App = () => {
     serving: [{ id: "", startTime: "", order: [] }],
     queue: [{ id: "", startTime: "", order: [] }],
     bartenders: [],
-    timeTillClosing: [],
   });
 
   const [currentTime, setCurrentTime] = useState({
@@ -28,13 +26,15 @@ const App = () => {
   });
   // Use: isItFriday to change closingTime state
 
+  const myTime = moment().format("HH:mm:ss");
+  console.log(myTime);
+
   useEffect(() => {
     const getAllData = async () => {
       const dataFromServer = await fetchData();
       const data = await dataFromServer;
       setAllData(data);
-      // setCurrentTime(moment().format("LTS"));
-
+      setCurrentTime(myTime);
       // setNewDoingState();
     };
 
@@ -68,7 +68,10 @@ const App = () => {
           barName={allData.bar.name}
           barClosing={allData.bar.closingTime}
         />
-        {/* <TimeTick /> */}
+        <TimeTick
+          timeRightNow={currentTime.timeRightNow}
+          closingTime={allData.bar.closingTime}
+        />
       </header>
       <div className="Wrap-info">
         <h3>Bartenders currently working</h3>
