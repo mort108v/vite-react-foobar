@@ -5,7 +5,7 @@ const BeingServed = (props) => {
   if (!props) {
     return null;
   }
-  const beingServedList = props.onTheServe.serving.map((serve) => {
+  const beingServedList = props.serving.map((serve) => {
     return <ServingID serve={serve} key={serve.id} />;
   });
   return <>{beingServedList}</>;

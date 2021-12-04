@@ -1,5 +1,4 @@
 const QueueID = (props) => {
-  //   console.log(props);
   if (!props) {
     return null;
   }
@@ -7,7 +6,10 @@ const QueueID = (props) => {
     <div className={"being-queued"}>
       <h3>ID: {props.que.id} </h3>
       <p>Started: {props.que.startTime} </p>
-      <p>Order: {props.que.order} </p>
+      <p>
+        Order:
+        <br /> {props.que.order}{" "}
+      </p>
     </div>
   );
 };

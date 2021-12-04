@@ -1,0 +1,36 @@
+.userinfo {
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient( to right, rgba($primaryColor, 0.9), rgba($primaryColor, 0.3)), url('../img/esport-bgr.jpg') center top;
+    background-size: cover;
+    padding-top: 15vh;
+    &__welcome {
+        margin: 2rem auto 0 auto;
+        &--h2 {
+            font-size: 1.8rem;
+            padding-bottom: 1rem;
+            margin-bottom: 1rem;
+            color: $secondaryColor;
+            font-family: $uniform-pro-con-medium;
+        }
+    }
+    &__table {
+        display: inline-table;
+        text-align: left;
+        width: 80vw;
+        &--head {
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+            grid-gap: 2rem;
+            border-top: 2px solid set-text-color($primaryColor);
+            border-bottom: 2px solid set-text-color($primaryColor);
+        }
+        &--tbody td {
+            padding-top: 1.5rem;
+            grid-gap: 1.5rem;
+        }
+    }
+}

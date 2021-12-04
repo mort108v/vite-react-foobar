@@ -1,0 +1,58 @@
+$grey: #16162A;
+$grey-medium: #3F3F50;
+$grey-light: #A5A5AC;
+$grey-pastel: #E3E3E5;
+$green: #5BE080;
+$green-light: #B9F8B9;
+$green-pastel: #DFFCDF;
+$blue-dark: #16152b;
+$blue-dusk: #1d1b38;
+$blue: #3E14D6;
+$blue-light: #6259FA;
+$blue-pastel: #CACEFC;
+$orange: #F48D69;
+$orange-light: #FFB591;
+$orange-pastel: #F8DDCE;
+$primaryColor: $blue-dark;
+$secondaryColor: $orange;
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+@mixin transition-ease {
+    transition: all 0.5s ease-in-out;
+}
+
+@function set-text-color($color) {
+    @if (lightness($color) > 40%) {
+        @return $blue-dusk;
+    }
+    @else {
+        @return $blue-pastel;
+    }
+}
+
+@mixin media-md {
+    @media screen and (min-width: 768px) {
+        @content;
+    }
+}
+
+// @mixin media-lg {
+//     @media screen and (min-width: 1024px) {
+//         @content;
+//     }
+// }
+// @mixin media-xl {
+//     @media screen and (min-width: 1600px) {
+//         @content;
+//     }
+// }
+// :export {
+//     primaryColor: $primaryColor;
+// }
+// :export {
+//     secondaryColor: $secondaryColor;
+// }

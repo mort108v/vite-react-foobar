@@ -1,11 +1,19 @@
 import Bartender from "./Bartender";
+import { v4 as uuidv4 } from "uuid";
+import NewDoingState from "./NewDoingState";
 
 const Bartenders = (props) => {
   if (!props) {
     return null;
   }
-  const bartenderList = props.allData.bartenders.map((bartender, index) => {
-    return <Bartender bartender={bartender} key={index} />;
+  const bartenderList = props.bartenders.map((bartender) => {
+    return (
+      <Bartender
+        bartender={bartender}
+        // doingState={NewDoingState()}
+        key={uuidv4()}
+      />
+    );
   });
   return <>{bartenderList}</>;
 };

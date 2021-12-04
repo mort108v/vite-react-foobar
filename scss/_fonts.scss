@@ -1,0 +1,72 @@
+/* FONTS */
+
+$shapiro-fly: 'shapiro5fly',
+Arial;
+$shapiro-feather: 'shapiro35feather',
+Arial;
+$shapiro-air: 'shapiro97air',
+Arial;
+$test: 'test';
+$shapiro-regular: 'sharpiro-regular',
+Arial;
+$shapiro-bold: 'shapiro-bold',
+Arial;
+$uniform-pro-con-black: 'uniform-pro-con-black',
+Arial;
+$uniform-pro-con-medium: 'uniform-pro-con-medium',
+Arial;
+@font-face {
+    font-family: 'shapiro5fly';
+    src: url('../fonts/shapiro5fly-webfont.woff2') format('woff2'), url('./fonts/shapiro5fly-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'shapiro35feather';
+    src: url('../fonts/shapiro35feather-webfont.woff2') format('woff2'), url('./fonts/shapiro35feather-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'shapiro97air';
+    src: url('../fonts/shapiro97air-webfont.woff2') format('woff2'), url('./fonts/shapiro97air-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'test';
+    src: url('../fonts/test.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'sharpiro-regular';
+    src: url('../fonts/sharpiro-regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'sharpiro-bold';
+    src: url('../fonts/sharpiro-bold.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'uniform-pro-con-black';
+    src: url('../fonts/uniform-pro-con-black.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'uniform-pro-con-medium';
+    src: url('../fonts/uniform-pro-con-medium.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}

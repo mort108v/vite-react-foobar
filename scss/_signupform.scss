@@ -1,0 +1,64 @@
+#signup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    opacity: 0.92;
+    visibility: hidden;
+    &.open {
+        visibility: visible;
+    }
+    .form-nav {
+        display: flex;
+        flex-flow: column wrap;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        overflow: hidden;
+        background: $primaryColor;
+        list-style-type: none;
+        padding-right: 1rem;
+        transform: translateY(-100%);
+        @include transition-ease;
+        &.open {
+            transform: translateY(0);
+        }
+        &__item {
+            transform: translateX(100vw);
+            @include transition-ease;
+            &.open {
+                transform: translateX(0);
+                padding-bottom: 1.5rem;
+                font-size: 1.5rem;
+            }
+            &.active>a {
+                color: $secondaryColor;
+                font-size: 2rem;
+            }
+            &:hover {
+                color: $secondaryColor;
+            }
+        }
+        &__item--signup {
+            height: 5vh;
+            width: 5vw;
+        }
+        // &.formgroup {
+        //     display: inline-block;
+        //     font-size: 1rem;
+        //     text-transform: uppercase;
+        //     padding: 2rem 0;
+        //     font-weight: 300;
+        //     @include transition-ease;
+        //     &:hover {
+        //         color: $secondaryColor;
+        //     }
+        // }
+    }
+}
+
+@for $i from 1 through 6 {
+    .form-nav__item:nth-child(#{$i}) {
+        transition-delay: ($i * 0.1s) + 0.15s;
+    }
+}

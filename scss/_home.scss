@@ -1,0 +1,35 @@
+@import 'fonts';
+.home {
+    height: 100%;
+    padding-top: 40vh;
+    overflow: hidden;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient( to right, rgba($primaryColor, 0.7), rgba($primaryColor, 0.3)), url('../img/esport-bgr.jpg') center top;
+    background-size: cover;
+    &__name--first {
+        font-size: 4rem;
+        padding-bottom: 1rem;
+        margin-bottom: 1rem;
+        color: $secondaryColor;
+        font-family: $shapiro-air;
+        // border-bottom: 2px solid set-text-color($primaryColor);
+    }
+    &__name--last {
+        font-size: 5rem;
+        padding-bottom: 1rem;
+        margin-bottom: 1rem;
+        color: $secondaryColor;
+        font-family: $shapiro-bold;
+    }
+    &__name--under {
+        font-size: 1.2rem;
+        padding-bottom: 1rem;
+        margin-bottom: 1rem;
+        color: $secondaryColor;
+        font-family: $uniform-pro-con-medium;
+    }
+    &__under {
+        margin-top: 4rem;
+    }
+}
