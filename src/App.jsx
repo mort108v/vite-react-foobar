@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 // import { v4 as uuidv4 } from "uuid";
 import moment from "moment";
 import "./App.css";
-import "../SCSS/Main.scss";
+// import "../SCSS/Main.scss";
 import Bartenders from "./components/Bartenders";
 import BeingServed from "./components/BeingServed";
 // import NewDoingState from "./components/NewDoingState";
