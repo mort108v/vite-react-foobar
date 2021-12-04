@@ -1,6 +1,6 @@
 import Bartender from "./Bartender";
 import { v4 as uuidv4 } from "uuid";
-import NewDoingState from "./NewDoingState";
+// import NewDoingState from "./NewDoingState";
 
 const Bartenders = (props) => {
   if (!props) {

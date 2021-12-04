@@ -21,20 +21,20 @@ const App = () => {
     bartenders: [],
   });
 
-  const [currentTime, setCurrentTime] = useState({
-    timeRightNow: [],
-  });
+  // const [currentTime, setCurrentTime] = useState({
+  //   timeRightNow: [],
+  // });
   // Use: isItFriday to change closingTime state
 
   const myTime = moment().format("HH:mm:ss");
-  console.log(myTime);
+  // console.log(myTime);
 
   useEffect(() => {
     const getAllData = async () => {
       const dataFromServer = await fetchData();
       const data = await dataFromServer;
       setAllData(data);
-      setCurrentTime(myTime);
+      // setCurrentTime(myTime);
       // setNewDoingState();
     };
 
@@ -68,10 +68,7 @@ const App = () => {
           barName={allData.bar.name}
           barClosing={allData.bar.closingTime}
         />
-        <TimeTick
-          timeRightNow={currentTime.timeRightNow}
-          closingTime={allData.bar.closingTime}
-        />
+        <TimeTick timeRightNow={myTime} closingTime={allData.bar.closingTime} />
       </header>
       <div className="Wrap-info">
         <h3>Bartenders currently working</h3>
