@@ -58,7 +58,7 @@ const App = () => {
       <header className="App-header">
         <Barinfo
           barName={allData.bar.name}
-          barClosing={allData.bar.closingTime}
+          // barClosing={allData.bar.closingTime}
         />
         <TimeTick timeRightNow={myTime} closingTime={allData.bar.closingTime} />
       </header>
