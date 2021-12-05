@@ -1,4 +1,5 @@
 // api.randomuser.me?results=5
+// For exam end: git clone --mirror
 
 import { useState, useEffect } from "react";
 import moment from "moment";

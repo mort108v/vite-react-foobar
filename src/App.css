@@ -22,7 +22,7 @@
     justify-content: center;
     font-size: calc(10px + 2vmin);
     color: white;
-    background-image: url(./images/splash/foobar_small_splash_1.png);
+    background-image: url(../images/splash/foobar_small_splash_1.png);
     background-blend-mode: soft-light;
     background-size: cover;
 }
