@@ -8,7 +8,6 @@ const ServingID = (props) => {
       <p>Started: {props.serve.startTime} </p>
       <ul>
         <li> Order: </li>
-
         <li> {props.serve.order} </li>
       </ul>
     </div>
@@ -16,7 +15,3 @@ const ServingID = (props) => {
 };
 
 export default ServingID;
-
-{
-  /* <table className="" */
-}

@@ -19,7 +19,7 @@ const TimeTick = (props) => {
     <div className="Time">
       <h2>
         | Time till closing:
-        {timeLeft}
+        {" " + timeLeft + " "}
         ||
       </h2>
     </div>

@@ -1,7 +1,4 @@
-// import Bartender from "./Bartender";
-
 const NewDoingState = (props) => {
-  // console.log(props);
   if (!props) {
     return null;
   }

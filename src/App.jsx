@@ -11,6 +11,7 @@ import Taps from "./components/Taps";
 import BeerStorage from "./components/BeerStorage";
 import TimeTick from "./components/TimeTick";
 import Barinfo from "./components/Barinfo";
+// import splash from "./assets/foobar_splash_1";
 
 const BASE_URL = "https://six-foobar.herokuapp.com";
 
@@ -61,6 +62,10 @@ const App = () => {
           // barClosing={allData.bar.closingTime}
         />
         <TimeTick timeRightNow={myTime} closingTime={allData.bar.closingTime} />
+
+        {/* <div>
+          <img src={splash} alt="bar splash image" />
+        </div> */}
       </header>
       <div className="Wrap-info">
         <h3>Bartenders currently working</h3>
