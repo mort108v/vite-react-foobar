@@ -1,13 +1,13 @@
 // api.randomuser.me?results=5
 
 import { useState, useEffect } from "react";
-// import { v4 as uuidv4 } from "uuid";
 import moment from "moment";
 import "./App.css";
 // import "../SCSS/Main.scss";
 import Bartenders from "./components/Bartenders";
 import BeingServed from "./components/BeingServed";
 import BeingQueued from "./components/BeingQueued";
+import Taps from "./components/Taps";
 import TimeTick from "./components/TimeTick";
 import Barinfo from "./components/Barinfo";
 
@@ -19,34 +19,25 @@ const App = () => {
     serving: [{ id: "", startTime: "", order: [] }],
     queue: [{ id: "", startTime: "", order: [] }],
     bartenders: [],
+    taps: [],
   });
 
-  // const [currentTime, setCurrentTime] = useState({
-  //   timeRightNow: [],
-  // });
   // Use: isItFriday to change closingTime state
 
   const myTime = moment().format("HH:mm:ss");
-  // console.log(myTime);
 
   useEffect(() => {
     const getAllData = async () => {
       const dataFromServer = await fetchData();
       const data = await dataFromServer;
       setAllData(data);
-      // setCurrentTime(myTime);
-      // setNewDoingState();
     };
 
     getAllData();
-
-    // TimeTick();
     setInterval(() => {
       getAllData();
     }, 1000);
   }, []);
-
-  // setInterval(TimeTick, 1000);
 
   // Fetch Data
   const fetchData = async () => {
@@ -57,7 +48,6 @@ const App = () => {
       },
     });
     const data = await res.json();
-    // console.log(data.serving[0].id);
     return data;
   };
 
@@ -82,6 +72,10 @@ const App = () => {
         <h3>Queued</h3>
         <div className="Queing-mode">
           <BeingQueued queue={allData.queue} />
+        </div>
+        <h3>Taps</h3>
+        <div className="Taps-being-used">
+          <Taps taps={allData.taps} />
         </div>
       </div>
     </div>
