@@ -1,21 +1,22 @@
 {
-  "name": "foobar_dash",
-  "version": "0.0.0",
-  "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "serve": "vite preview"
-  },
-  "dependencies": {
-    "isitfriday": "^1.0.3",
-    "moment": "^2.29.1",
-    "react": "^17.0.0",
-    "react-dom": "^17.0.0",
-    "sass": "^1.44.0",
-    "uuid": "^8.3.2"
-  },
-  "devDependencies": {
-    "@vitejs/plugin-react": "^1.0.0",
-    "vite": "^2.6.4"
-  }
+    "name": "foobar_dash",
+    "version": "0.0.0",
+    "scripts": {
+        "dev": "vite",
+        "build": "vite build",
+        "serve": "vite preview"
+    },
+    "dependencies": {
+        "netlify-plugin-image-optim": "^0.4.0",
+        "isitfriday": "^1.0.3",
+        "moment": "^2.29.1",
+        "react": "^17.0.0",
+        "react-dom": "^17.0.0",
+        "sass": "^1.44.0",
+        "uuid": "^8.3.2"
+    },
+    "devDependencies": {
+        "@vitejs/plugin-react": "^1.0.0",
+        "vite": "^2.6.4"
+    }
 }
