@@ -2,15 +2,8 @@ import moment from "moment";
 
 // Clock countdown to closing
 const TimeTick = (props) => {
-  console.log(props);
-  // const timeToClose = props.bar.closingTime;
-  // const CurrentTime = () => {
-  //   new Date().toLocaleTimeString("da-DK");
-  // };
   const barClosing = props.closingTime;
-  console.log(barClosing);
   const momentInTime = props.timeRightNow;
-  console.log(momentInTime);
 
   return (
     <div className="Time">

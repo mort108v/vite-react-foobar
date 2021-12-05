@@ -8,6 +8,7 @@ import Bartenders from "./components/Bartenders";
 import BeingServed from "./components/BeingServed";
 import BeingQueued from "./components/BeingQueued";
 import Taps from "./components/Taps";
+import BeerStorage from "./components/BeerStorage";
 import TimeTick from "./components/TimeTick";
 import Barinfo from "./components/Barinfo";
 
@@ -20,6 +21,7 @@ const App = () => {
     queue: [{ id: "", startTime: "", order: [] }],
     bartenders: [],
     taps: [],
+    storage: [],
   });
 
   // Use: isItFriday to change closingTime state
@@ -76,6 +78,10 @@ const App = () => {
         <h3>Taps</h3>
         <div className="Taps-being-used">
           <Taps taps={allData.taps} />
+        </div>
+        <h3>In Storage</h3>
+        <div className="Beer-in-storage">
+          <BeerStorage storage={allData.storage} />
         </div>
       </div>
     </div>

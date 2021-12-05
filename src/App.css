@@ -63,6 +63,13 @@
     grid-gap: 10px;
 }
 
+.Beer-in-storage {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr auto;
+    text-align: left;
+    grid-gap: 10px;
+}
+
 .App-link {
     color: #61dafb;
 }

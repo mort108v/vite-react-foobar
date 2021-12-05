@@ -2,7 +2,6 @@ import Tap from "./Tap";
 import { v4 as uuidv4 } from "uuid";
 
 const Taps = (props) => {
-  console.log(props);
   if (!props) {
     return null;
   }
