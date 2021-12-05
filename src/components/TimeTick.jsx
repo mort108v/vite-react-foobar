@@ -1,15 +1,19 @@
+// import Moment from "moment";
 import moment from "moment";
 
 // Clock countdown to closing
 const TimeTick = (props) => {
-  const barClosing = props.closingTime;
-  const momentInTime = props.timeRightNow;
+  let barClosing = moment(props.closingTime, "HH:mm:ss");
+  let momentInTime = moment(props.timeRightNow, "HH:mm:ss");
+  let timeDiff = barClosing.subtract(momentInTime);
+  let timeLeft = moment.utc(timeDiff).format("HH:mm:ss");
 
   return (
     <div className="Time">
       <h2>
-        | Time till closing
-        {moment(barClosing).subtract(momentInTime).format("HH:mm:ss")} ||
+        | Time till closing:
+        {timeLeft}
+        ||
       </h2>
     </div>
   );
