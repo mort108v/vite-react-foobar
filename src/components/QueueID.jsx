@@ -5,10 +5,11 @@ const QueueID = (props) => {
   return (
     <div className={"being-queued"}>
       <h3>ID: {props.que.id} </h3>
-      <p>Started: {props.que.startTime} </p>
+      <p>Start-time: {props.timeRightNow} </p>
+      <p>Timestamp: {props.que.startTime} </p>
       <p>
         Order:
-        <br /> {props.que.order}{" "}
+        <br /> {props.que.order}
       </p>
     </div>
   );

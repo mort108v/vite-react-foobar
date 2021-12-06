@@ -5,7 +5,7 @@ const BeingQueued = (props) => {
     return null;
   }
   const beingQueuedList = props.queue.map((que) => {
-    return <QueueID que={que} key={que.id} />;
+    return <QueueID que={que} key={que.id} timeRightNow={props.timeRightNow} />;
   });
   return <>{beingQueuedList}</>;
 };

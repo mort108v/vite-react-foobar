@@ -1,5 +1,9 @@
 // api.randomuser.me?results=5
+
 // For exam end: git clone --mirror
+
+// Run this once a day in screenshot folder!
+// $ pageres  https://nifty-snyder-6cd116.netlify.app/index.html 1024x768 1366x768 1600x900 --delay=5
 
 import { useState, useEffect } from "react";
 import moment from "moment";
@@ -26,7 +30,11 @@ const App = () => {
     storage: [],
   });
 
-  // Use: isItFriday to change closingTime state
+  const [momentInTime, setMomentInTime] = useState();
+
+  useEffect(() => {
+    setMomentInTime(myTime);
+  }, [allData.serving.order, allData.queue.order]);
 
   const myTime = moment().format("HH:mm:ss");
 
@@ -75,11 +83,11 @@ const App = () => {
         </div>
         <h3>Being Served</h3>
         <div className="Serving-mode">
-          <BeingServed serving={allData.serving} />
+          <BeingServed serving={allData.serving} timeRightNow={momentInTime} />
         </div>
         <h3>Queued</h3>
         <div className="Queing-mode">
-          <BeingQueued queue={allData.queue} />
+          <BeingQueued queue={allData.queue} timeRightNow={momentInTime} />
         </div>
         <h3>Taps</h3>
         <div className="Taps-being-used">

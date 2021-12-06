@@ -27,3 +27,5 @@ const TimeTick = (props) => {
 };
 
 export default TimeTick;
+
+// https://app.uniswap.org/#/add/v2/0x2f141ce366a2462f02cea3d12cf93e4dca49e4fd/ETH
