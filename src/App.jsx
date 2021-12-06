@@ -5,7 +5,7 @@
 
 import { useState, useEffect } from "react";
 import moment from "moment";
-import "./scss/main.scss";
+import "SCSS/main.scss";
 import Bartenders from "./components/Bartenders";
 import Social from "./components/Social";
 import BeingServed from "./components/BeingServed";
