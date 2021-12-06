@@ -7,6 +7,7 @@
 
 import { useState, useEffect } from "react";
 import moment from "moment";
+// import "vite/modulepreload-polyfill";
 import "./App.css";
 // import "../SCSS/Main.scss";
 import Bartenders from "./components/Bartenders";
@@ -34,7 +35,7 @@ const App = () => {
 
   useEffect(() => {
     setMomentInTime(myTime);
-  }, [allData.serving.order, allData.queue.order]);
+  }, [allData.serving.startTime, allData.queue.startTime]);
 
   const myTime = moment().format("HH:mm:ss");
 
