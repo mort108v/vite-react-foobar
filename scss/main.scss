@@ -1,81 +1,86 @@
-    @import 'config';
-    @import 'home';
-    @import 'menu';
-    // @import 'about';
-    // @import 'projects';
-    @import 'contact';
-    @import 'responsive';
-    @import 'fonts';
-    @import 'signupform';
-    @import 'buttons';
-    @import 'user';
-    body {
-        background: $primaryColor;
-        color: set-text-color($primaryColor);
-        height: 100vh;
-        font-family: $shapiro-feather;
-        font-weight: 400;
-        line-height: 1;
-    }
-    
-    h1,
-    h2,
-    h3 {
-        font-weight: 600;
-    }
-    
-    a {
-        color: set-text-color($primaryColor);
-        text-decoration: none;
-    }
-    
-    // .g_to_interact_with {
-    //     fill: $orange;
-    // }
-    .text-secondary {
-        color: $secondaryColor;
-    }
-    
-    header {
-        position: fixed;
+@import 'config';
+@import 'overview';
+// @import 'menu';
+// @import 'about';
+// @import 'projects';
+// @import 'contact';
+// @import 'responsive';
+// @import 'fonts';
+// @import 'signupform';
+// @import 'buttons';
+// @import 'user';
+body {
+    background: $primaryColor;
+    background-image: url(../images/splash/foobar_small_splash_1.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-blend-mode: soft-light;
+    color: set-text-color($primaryColor);
+    height: 100vh;
+    font-family: $shapiro-feather;
+    font-weight: 400;
+    line-height: 1;
+}
+
+h1,
+h2,
+h3 {
+    font-weight: 600;
+}
+
+a {
+    color: set-text-color($primaryColor);
+    text-decoration: none;
+}
+
+// .g_to_interact_with {
+//     fill: $orange;
+// }
+.text-secondary {
+    color: $secondaryColor;
+}
+
+.App-header {
+    position: fixed;
+    z-index: 2;
+    width: 100%;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    .social-icons {
         z-index: 2;
-        width: 100%;
-        padding: 1rem;
-        display: flex;
-    }
-    
-    main {
-        height: 100%;
-        width: 100%;
-        .social-icons {
-            position: fixed;
-            z-index: 2;
-            top: 2rem;
-            left: 2rem;
-            a {
-                padding: 0.4rem;
-                @include transition-ease;
-                &:hover {
-                    color: $secondaryColor;
-                }
+        a {
+            padding: 0.4rem;
+            @include transition-ease;
+            &:hover {
+                color: $secondaryColor;
             }
         }
     }
-    
-    footer {
-        font-size: 1rem;
-        position: fixed;
-        bottom: 0.4rem;
-        right: 1rem;
-        text-align: right;
-        padding: 1rem;
-        color: set-text-color($primaryColor);
+}
+
+main {
+    height: 100%;
+    width: 100%;
+}
+
+footer {
+    font-size: 1rem;
+    position: fixed;
+    bottom: 0.4rem;
+    right: 1rem;
+    text-align: right;
+    padding: 1rem;
+    color: set-text-color($primaryColor);
+}
+
+.menu-logo {
+    padding-top: 2.5vh;
+    flex-grow: 1;
+    &__svg {
+        text-align: center;
     }
-    
-    .menu-logo {
-        padding-top: 2.5vh;
-        flex-grow: 1;
-        &__svg {
-            text-align: center;
-        }
-    }
+}

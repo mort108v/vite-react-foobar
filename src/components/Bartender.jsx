@@ -7,15 +7,23 @@ const Bartender = (props) => {
   }
 
   return (
-    <div className={"bartender"}>
-      <h3>Name: {props.bartender.name} </h3>
-      <p>Status: {props.bartender.status} </p>
-      <p>
+    <ul className={"overview-bartender"}>
+      <li className="overview-bartender__item">
+        Name: {props.bartender.name}{" "}
+      </li>
+      <li className="overview-bartender__item">
+        Status: {props.bartender.status}
+      </li>
+      <li className="overview-bartender__item">
         Doing: <NewDoingState statusDetail={props.bartender.statusDetail} />
-      </p>
-      <p>Using Tap: {props.bartender.usingTap + 1} </p>
-      <p>Serving Nr: {props.bartender.servingCustomer} </p>
-    </div>
+      </li>
+      <li className="overview-bartender__item">
+        Using Tap: {props.bartender.usingTap + 1}
+      </li>
+      <li className="overview-bartender__item">
+        Serving Nr: {props.bartender.servingCustomer}
+      </li>
+    </ul>
   );
 };
 

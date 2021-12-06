@@ -5,8 +5,8 @@ const Barinfo = (props) => {
   }
   return (
     <>
-      <h2 className="NameTheBar"> || {props.barName} |</h2>
-      <h2 className="BarClosing"> | {props.barClosing} |</h2>
+      <h2 className="NameTheBar"> {props.barName} </h2>
+      <h2 className="BarClosing"> {props.barClosing} </h2>
     </>
   );
 };
