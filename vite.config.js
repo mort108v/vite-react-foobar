@@ -11,7 +11,7 @@ export default defineConfig({
         manifest: true,
         rollupOptions: {
             input: {
-                main: resolve(__dirname, './src/main.jsx'),
+                main: resolve(__dirname, '../src/main.jsx'),
                 // users: resolve(__dirname, './user.html')
             }
         }
