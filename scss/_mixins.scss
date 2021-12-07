@@ -1,7 +1,0 @@
-@mixin longshadow($color) {
-    text-shadow: makelongshadow($color);
-}
-
-// h1 {
-//     @include longshadow(darken($color, 5% ));
-// }

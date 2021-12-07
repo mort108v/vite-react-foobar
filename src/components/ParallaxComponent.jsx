@@ -21,7 +21,7 @@ const ParallaxComponent = () => (
       <div style={{ height: "150px" }} />
     </Parallax> */}
     <Parallax strength={300}>
-      <div style={{ height: "350px" }} />
+      <div style={{ height: "45vh" }} />
       <Background className="custom-bg">
         <img src={parallaxImage} alt="parallaxImage" />
       </Background>

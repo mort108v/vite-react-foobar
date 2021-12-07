@@ -25,9 +25,12 @@
     }
     &-block {
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-columns: repeat(2, 1fr);
         align-items: center;
         text-align: center;
-        background: linear-gradient( to right, rgba($primaryColor, 0.8), rgba($primaryColor, 0.2));
+        line-height: 1.3rem;
+        & ul {
+            padding-bottom: 1.5rem;
+        }
     }
 }

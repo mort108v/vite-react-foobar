@@ -40,19 +40,39 @@ $secondaryColor: $orange;
     }
 }
 
-// @mixin media-lg {
-//     @media screen and (min-width: 1024px) {
-//         @content;
-//     }
-// }
-// @mixin media-xl {
-//     @media screen and (min-width: 1600px) {
-//         @content;
-//     }
-// }
-// :export {
-//     primaryColor: $primaryColor;
-// }
-// :export {
-//     secondaryColor: $secondaryColor;
+@mixin media-lg {
+    @media screen and (min-width: 1024px) {
+        @content;
+    }
+}
+
+@mixin media-xl {
+    @media screen and (min-width: 1600px) {
+        @content;
+    }
+}
+
+ :export {
+    primaryColor: $primaryColor;
+}
+
+ :export {
+    secondaryColor: $secondaryColor;
+}
+
+@mixin longshadow($color) {
+    text-shadow: makelongshadow($color);
+}
+
+@function makelongshadow($color) {
+    $val: 0px 0px $color;
+    @for $i from 1 through 200 {
+        $val: #{$val},
+        #{$i}px #{$i}px #{$color};
+    }
+    @return $val;
+}
+
+// h1 {
+//     @include longshadow(darken($color, 5% ));
 // }
