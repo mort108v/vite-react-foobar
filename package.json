@@ -12,6 +12,8 @@
         "moment": "^2.29.1",
         "react": "^17.0.0",
         "react-dom": "^17.0.0",
+        "react-parallax": "^3.3.0",
+        "react-scroll-parallax": "^2.4.0",
         "sass": "^1.44.0",
         "uuid": "^8.3.2"
     },

@@ -14,6 +14,7 @@ import Taps from "./components/Taps";
 import BeerStorage from "./components/BeerStorage";
 import TimeTick from "./components/TimeTick";
 import Barinfo from "./components/Barinfo";
+import ParallaxComponent from "./components/ParallaxComponent";
 
 const BASE_URL = "https://six-foobar.herokuapp.com";
 
@@ -26,6 +27,12 @@ const App = () => {
     taps: [],
     storage: [],
   });
+
+  // const ParallaxImage = () => (
+  //   <Parallax className="custom-class" y={[-20, 20]} tagOuter="figure">
+  //     <Image src="/splash/foobar_small_splash_1.png" />
+  //   </Parallax>
+  // );
 
   const [momentInTime, setMomentInTime] = useState();
 
@@ -69,7 +76,8 @@ const App = () => {
       </header>
       <section id="main">
         <section id="overview">
-          <div className="overview-header">
+          <ParallaxComponent />
+          <div className="overview-header__top">
             <h3 className="overview-header__title">Bartenders</h3>
           </div>
           <div className="overview-block">
@@ -85,7 +93,7 @@ const App = () => {
             />
           </div>
           <div className="overview-header">
-            <h3 className="overview-header__title">Ordes in que</h3>
+            <h3 className="overview-header__title">Orders in que</h3>
           </div>
           <div className="overview-block">
             <BeingQueued queue={allData.queue} timeRightNow={momentInTime} />
@@ -104,7 +112,7 @@ const App = () => {
           </div>
         </section>
         <section id="bottom">
-          <footer>&copy; Copyright 2021 - s1xp4c design</footer>
+          <footer> Copyright 2021 &copy; s1xp4c design</footer>
         </section>
       </section>
     </div>

@@ -11,15 +11,16 @@
 // @import 'user';
 body {
     background: $primaryColor;
-    background-image: url(../images/splash/foobar_small_splash_1.png);
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-blend-mode: soft-light;
     color: set-text-color($primaryColor);
     height: 100vh;
     font-family: $shapiro-feather;
     font-weight: 400;
     line-height: 1;
+}
+
+ul li {
+    list-style-type: none;
+    text-align: left;
 }
 
 h1,
@@ -44,13 +45,13 @@ a {
     position: fixed;
     z-index: 2;
     width: 100%;
-    padding: 1rem;
-    margin-bottom: 2rem;
+    padding-top: 2rem;
     display: flex;
     align-items: center;
     text-align: center;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 2fr 1fr 1fr;
+    color: ($secondaryColor);
     .social-icons {
         z-index: 2;
         a {
@@ -63,9 +64,14 @@ a {
     }
 }
 
-main {
+#main {
     height: 100%;
-    width: 100%;
+    width: 80vw;
+    display: flex;
+    text-align: center;
+    align-content: center;
+    justify-content: center;
+    margin: 0 auto;
 }
 
 footer {
@@ -84,4 +90,8 @@ footer {
     &__svg {
         text-align: center;
     }
+}
+
+.paraScroll {
+    padding-top: 5.5rem;
 }
