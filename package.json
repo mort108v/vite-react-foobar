@@ -2,8 +2,6 @@
     "name": "foobar_dash",
     "version": "1.0.7",
     "scripts": {
-        "build-css": "node-sass src -o src",
-        "watch-css": "npm run build-css && node-sass src -o src --watch --recursive",
         "dev": "vite",
         "build": "vite build",
         "serve": "vite preview"
