@@ -72,31 +72,35 @@ const App = () => {
           <div className="overview-header">
             <h3 className="overview-header__title">Bartenders</h3>
           </div>
-          <div className="overview-bartenders">
+          <div className="overview-block">
             <Bartenders bartenders={allData.bartenders} />
           </div>
-          <div className="Wrap-info">
-            <h3>Bartenders currently working</h3>
-            <div className="Bartenders"></div>
-            <h3>Being Served</h3>
-            <div className="Serving-mode">
-              <BeingServed
-                serving={allData.serving}
-                timeRightNow={momentInTime}
-              />
-            </div>
-            <h3>Queued</h3>
-            <div className="Queing-mode">
-              <BeingQueued queue={allData.queue} timeRightNow={momentInTime} />
-            </div>
-            <h3>Taps</h3>
-            <div className="Taps-being-used">
-              <Taps taps={allData.taps} />
-            </div>
-            <h3>In Storage</h3>
-            <div className="Beer-in-storage">
-              <BeerStorage storage={allData.storage} />
-            </div>
+          <div className="overview-header">
+            <h3 className="overview-header__title">Being served</h3>
+          </div>
+          <div className="overview-block">
+            <BeingServed
+              serving={allData.serving}
+              timeRightNow={momentInTime}
+            />
+          </div>
+          <div className="overview-header">
+            <h3 className="overview-header__title">Ordes in que</h3>
+          </div>
+          <div className="overview-block">
+            <BeingQueued queue={allData.queue} timeRightNow={momentInTime} />
+          </div>
+          <div className="overview-header">
+            <h3 className="overview-header__title">Taps in use</h3>
+          </div>
+          <div className="overview-block">
+            <Taps taps={allData.taps} />
+          </div>
+          <div className="overview-header">
+            <h3 className="overview-header__title">Kegs in storage</h3>
+          </div>
+          <div className="overview-block">
+            <BeerStorage storage={allData.storage} />
           </div>
         </section>
         <section id="bottom">
