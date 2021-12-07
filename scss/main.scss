@@ -36,15 +36,23 @@ a {
 
 #main {
     height: 100%;
-    width: 80vw;
+    width: 70vw;
+    position: sticky;
     text-align: center;
     align-content: center;
-    justify-content: center;
     margin: 0 auto;
+    margin-top: .5vh;
+    padding: 30px;
+    border: 2px solid set-text-color($primaryColor);
+    border-radius: 10px;
+}
+
+.custom-bg img {
+    border-radius: 10px;
 }
 
 .App-header {
-    position: fixed;
+    position: relative;
     z-index: 2;
     height: auto;
     width: 100vw;
@@ -80,6 +88,6 @@ footer {
     color: set-text-color($primaryColor);
 }
 
-.paraScroll {
-    padding-top: 5.5rem;
-}
+// .paraScroll {
+//     padding-top: .5rem;
+// }

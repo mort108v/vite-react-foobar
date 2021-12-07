@@ -3,7 +3,7 @@ import { Parallax, Background } from "react-parallax";
 import parallaxImage from "/images/foobar_small_splash_1.png";
 
 const ParallaxComponent = () => (
-  <div className="paraScroll">
+  <div className="overview-header__paraScroll">
     {/* <Parallax
       blur={10}
       bgImage={parallaxImage}
@@ -21,9 +21,16 @@ const ParallaxComponent = () => (
       <div style={{ height: "150px" }} />
     </Parallax> */}
     <Parallax strength={300}>
-      <div style={{ height: "45vh" }} />
-      <Background className="custom-bg">
-        <img src={parallaxImage} alt="parallaxImage" />
+      <div style={{ height: "35vh" }} />
+      <Background
+        className="overview-header__paraScroll--div"
+        // imageStyle={{ borderRadius: 6 }}
+      >
+        <img
+          src={parallaxImage}
+          className="overview-header__paraScroll--div-parallaxBackground"
+          alt="parallaxImage"
+        />
       </Background>
     </Parallax>
   </div>

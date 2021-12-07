@@ -19,8 +19,20 @@
             color: $secondaryColor;
             background: linear-gradient( to right, rgba($primaryColor, 0.8), rgba($primaryColor, 0.2));
             font-family: $shapiro-air;
-            border-top: 2px solid set-text-color($primaryColor);
-            border-bottom: 2px solid set-text-color($primaryColor);
+            border: 2px solid set-text-color($primaryColor);
+            border-radius: 8px;
+        }
+        &__paraScroll--div {
+            border: solid 5px;
+            background-clip: padding-box;
+            background-position: center center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            @include transition-ease;
+            &-parallaxBackground {
+                border-radius: 50px;
+                // filter: linear-gradient( to right, rgba($primaryColor, 0.7), rgba($primaryColor, 0.3));
+            }
         }
     }
     &-block {

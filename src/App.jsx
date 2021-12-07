@@ -76,7 +76,9 @@ const App = () => {
       </header>
       <section id="main">
         <section id="overview">
-          <ParallaxComponent />
+          <div className="overview-header__parallax">
+            <ParallaxComponent />
+          </div>
           <div className="overview-header__top">
             <h3 className="overview-header__title">Bartenders</h3>
           </div>
@@ -111,9 +113,9 @@ const App = () => {
             <BeerStorage storage={allData.storage} />
           </div>
         </section>
-        <section id="bottom">
-          <footer> Copyright 2021 &copy; s1xp4c design</footer>
-        </section>
+      </section>
+      <section id="bottom">
+        <footer> Copyright 2021 &copy; s1xp4c design</footer>
       </section>
     </div>
   );
