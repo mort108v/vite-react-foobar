@@ -22,27 +22,37 @@
             border: 2px solid set-text-color($primaryColor);
             border-radius: 8px;
         }
-        &__paraScroll--div {
-            border: solid 5px;
-            background-clip: padding-box;
-            background-position: center center;
-            background-size: cover;
-            background-repeat: no-repeat;
-            @include transition-ease;
-            &-parallaxBackground {
-                border-radius: 50px;
-                // filter: linear-gradient( to right, rgba($primaryColor, 0.7), rgba($primaryColor, 0.3));
-            }
-        }
+        // &__paraScroll--div {
+        //     border: solid 5px;
+        //     background-clip: padding-box;
+        //     background-position: center center;
+        //     background-size: cover;
+        //     background-repeat: no-repeat;
+        //     @include transition-ease;
+        //     &-parallaxBackground {
+        //         border-radius: 50px;
+        //         // filter: linear-gradient( to right, rgba($primaryColor, 0.7), rgba($primaryColor, 0.3));
+        //     }
+        // }
     }
     &-block {
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(1, 1fr);
         align-items: center;
         text-align: center;
         line-height: 1.3rem;
         & ul {
             padding-bottom: 1.5rem;
         }
+    }
+}
+
+.react-parallax-background-children {
+    border: solid 5px;
+    &.react-parallax-content {
+        background-position: center center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        border-radius: 20px;
     }
 }

@@ -1,3 +1,4 @@
+// import { v4 as uuidv4 } from "uuid";
 const NewDoingState = (props) => {
   if (!props) {
     return null;
@@ -14,7 +15,7 @@ const NewDoingState = (props) => {
     startServing: "Starting to Serve",
     waiting: "Waiting for Work",
   };
-
+  // const currentStateKey = {uuidv4()}
   return <>{DOING_STATES[currentDoingState]}</>;
 };
 

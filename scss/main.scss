@@ -76,6 +76,18 @@ a {
     }
 }
 
+.thead-tr-th__left {
+    display: flex;
+    align-content: left;
+    text-align: left;
+}
+
+.thead-tr-th__right {
+    display: flex;
+    align-content: right;
+    text-align: right;
+}
+
 footer {
     font-size: 1rem;
     position: fixed;

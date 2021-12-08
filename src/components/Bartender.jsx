@@ -1,30 +1,37 @@
-// import { FaTimes } from "react-icons/fa";
 import NewDoingState from "./NewDoingState";
+// import { v4 as uuidv4 } from "uuid";
+import TableComponent from "./TableComponent";
 
 const Bartender = (props) => {
   if (!props) {
     return null;
   }
+  const theadData = ["Name", "Status", "Doing", "Using Tap", "Serving Nr"];
 
+  const tableName = "bartender-table";
+  const theadName = "bartender-table__thead";
+  const tbodyData = [
+    {
+      id: props.id,
+      key: props.IDkey,
+      items: [
+        props.bartender.name,
+        props.bartender.status,
+        <NewDoingState statusDetail={props.bartender.statusDetail} />,
+        props.bartender.usingTap + 1,
+        props.bartender.servingCustomer,
+      ],
+    },
+  ];
   return (
-    <ul className={"overview-bartenders__bartender"}>
-      <li className="overview-bartenders__bartender--item">
-        Name: {props.bartender.name}{" "}
-      </li>
-      <li className="overview-bartenders__bartender--item">
-        Status: {props.bartender.status}
-      </li>
-      <li className="overview-bartenders__bartender--item">
-        Doing: <NewDoingState statusDetail={props.bartender.statusDetail} />
-      </li>
-      <li className="overview-bartenders__bartender--item">
-        Using Tap: {props.bartender.usingTap + 1}
-      </li>
-      <li className="overview-bartenders__bartender--item">
-        Serving Nr: {props.bartender.servingCustomer}
-      </li>
-    </ul>
+    <div>
+      <TableComponent
+        theadData={theadData}
+        tbodyData={tbodyData}
+        theadName={theadName}
+        tableName={tableName}
+      />
+    </div>
   );
 };
-
 export default Bartender;
