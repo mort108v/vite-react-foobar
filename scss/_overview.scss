@@ -16,7 +16,7 @@
             padding-bottom: .5rem;
             padding-top: .5rem;
             margin-bottom: 1rem;
-            color: $secondaryColor;
+            color: set-header-color($headerColor);
             background: linear-gradient( to right, rgba($primaryColor, 0.8), rgba($primaryColor, 0.2));
             font-family: $shapiro-air;
             border: 2px solid set-text-color($primaryColor);
@@ -36,14 +36,21 @@
         // }
     }
     &-block {
-        display: grid;
+        display: -ms-inline-grid;
         grid-template-columns: repeat(1, 1fr);
         align-items: center;
-        text-align: center;
-        line-height: 1.3rem;
-        & ul {
-            padding-bottom: 1.5rem;
-        }
+        text-align: left;
+        // line-height: 1.3rem;
+        justify-content: space-between;
+        // & table.bartender-table {
+        //     & thead.bartender-table__thead {
+        //         text-align: center;
+        //         // justify-content: space-evenly;
+        //         // border: 2px solid set-text-color($secondaryColor);
+        //         // border-radius: 8px;
+        //         color: ($secondaryColor);
+        //     }
+        // }
     }
 }
 

@@ -6,7 +6,7 @@ const Bartender = (props) => {
   if (!props) {
     return null;
   }
-  const theadData = ["Name", "Status", "Doing", "Using Tap", "Serving Nr"];
+  const theadData = ["Name", "Status", "Doing", "Using", "Serving"];
 
   const tableName = "bartender-table";
   const theadName = "bartender-table__thead";

@@ -14,7 +14,8 @@ $orange: #F48D69;
 $orange-light: #FFB591;
 $orange-pastel: #F8DDCE;
 $primaryColor: $blue-dark;
-$secondaryColor: $orange;
+$secondaryColor: $blue-pastel;
+$headerColor: $orange;
 * {
     box-sizing: border-box;
     margin: 0;
@@ -31,6 +32,15 @@ $secondaryColor: $orange;
     }
     @else {
         @return $blue-pastel;
+    }
+}
+
+@function set-header-color($color) {
+    @if (lightness($color) > 40%) {
+        @return $headerColor;
+    }
+    @else {
+        @return $primaryColor;
     }
 }
 
@@ -58,6 +68,10 @@ $secondaryColor: $orange;
 
  :export {
     secondaryColor: $secondaryColor;
+}
+
+:export {
+    headerColor: $headerColor;
 }
 
 @mixin longshadow($color) {

@@ -28,12 +28,6 @@ const App = () => {
     storage: [],
   });
 
-  // const ParallaxImage = () => (
-  //   <Parallax className="custom-class" y={[-20, 20]} tagOuter="figure">
-  //     <Image src="/splash/foobar_small_splash_1.png" />
-  //   </Parallax>
-  // );
-
   const [momentInTime, setMomentInTime] = useState();
 
   useEffect(() => {
@@ -52,7 +46,7 @@ const App = () => {
     getAllData();
     setInterval(() => {
       getAllData();
-    }, 1000);
+    }, 5000);
   }, []);
 
   // Fetch Data
