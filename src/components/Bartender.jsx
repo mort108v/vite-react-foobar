@@ -1,4 +1,4 @@
-import NewDoingState from "./NewDoingState";
+// import NewDoingState from "./NewDoingState";
 // import { v4 as uuidv4 } from "uuid";
 import TableComponent from "./TableComponent";
 
@@ -6,10 +6,7 @@ const Bartender = (props) => {
   if (!props) {
     return null;
   }
-  const theadData = ["Name", "Status", "Doing", "Using", "Serving"];
 
-  const tableName = "bartender-table";
-  const theadName = "bartender-table__thead";
   const tbodyData = [
     {
       id: props.id,
@@ -23,15 +20,5 @@ const Bartender = (props) => {
       ],
     },
   ];
-  return (
-    <div>
-      <TableComponent
-        theadData={theadData}
-        tbodyData={tbodyData}
-        theadName={theadName}
-        tableName={tableName}
-      />
-    </div>
-  );
 };
 export default Bartender;
