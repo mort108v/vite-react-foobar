@@ -7,7 +7,7 @@ const TableComponent = ({ theadData, tbodyData, tableName, theadName }) => {
   return (
     <table className={tableName}>
       <thead className={theadName}>
-        <tr>
+        <tr className="table-head__row">
           {theadData.map((thead) => {
             return <TableHeadItem key={thead} item={thead} />;
           })}

@@ -94,9 +94,11 @@
                 }
             }
             & tbody {
-                & tr {
+                & tr.table-body__row {
+                    padding: 3px;
+                    margin: 3px;
                     vertical-align: top;
-                    border: 2px solid set-borderLine-color($borderLine);
+                    border: 2px solid set-borderLine-color($orange);
                 }
                 & tr td {
                     text-align: left;

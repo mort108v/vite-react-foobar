@@ -2,9 +2,14 @@
 @import 'overview';
 @import 'fonts';
 @import 'responsive';
+#root {
+    $background-color: #16152b;
+    $text-color: #16152b;
+}
+
 body {
-    background: $primaryColor;
-    color: set-text-color($primaryColor);
+    background-color: var(--background-color);
+    color: var(--text-color);
     height: 100vh;
     font-family: $shapiro-feather;
     font-weight: 400;
@@ -78,18 +83,24 @@ a {
 }
 
 table {
+    // border-collapse:;
     width: 100%;
     & thead {
         & tr {
+            padding: 3px;
+            margin: 3px;
             color: set-header-color($headerColor);
         }
     }
     // Why this not working???
-    & tbody {
-        &:nth-child(0) {
-            padding: .3rem;
-        }
-    }
+    // & tbody {
+    //     & tr.table-row {
+    //         border: 2px solid set-borderLine-color($orange);
+    //     }
+    //     &:nth-child(0) {
+    //         padding: .3rem;
+    //     }
+    // }
 }
 
 footer {

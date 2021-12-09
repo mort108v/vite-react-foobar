@@ -19,6 +19,20 @@ import ParallaxComponent from "./components/ParallaxComponent";
 const BASE_URL = "https://six-foobar.herokuapp.com";
 
 const App = () => {
+  const [darkTheme, setDarkTheme] = useState(true);
+
+  useEffect(() => {
+    const root = document.documentElement;
+    root?.style.setProperty(
+      "--background-color",
+      darkTheme ? "$primaryColor" : "$secondaryColor"
+    );
+    root?.style.setProperty(
+      "--text-color",
+      darkTheme ? "$secondaryColor" : "$primaryColor"
+    );
+  }, [darkTheme]);
+
   const [allData, setAllData] = useState({
     bar: { name: "", closingTime: [] },
     serving: [{ id: "", startTime: "", order: [] }],
@@ -70,6 +84,9 @@ const App = () => {
         <Barinfo barName={allData.bar.name} />
         <Social />
         <TimeTick timeRightNow={myTime} closingTime={allData.bar.closingTime} />
+        <button onClick={() => setDarkTheme(!darkTheme)}>
+          {darkTheme ? "Light theme" : "Dark theme"}
+        </button>
       </header>
       <section id="main">
         <section id="overview">

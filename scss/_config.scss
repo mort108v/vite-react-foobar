@@ -36,6 +36,15 @@ $borderLine: $orange-light;
     }
 }
 
+@function set-bgr-color($color) {
+    @if ($color==$primaryColor) {
+        @return $primaryColor;
+    }
+    @else {
+        @return $secondaryColor;
+    }
+}
+
 @function set-borderLine-color($color) {
     @if (lightness($color) > 40%) {
         @return $borderLine;
