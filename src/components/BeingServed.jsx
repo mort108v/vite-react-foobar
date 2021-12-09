@@ -1,8 +1,10 @@
 import TableComponent from "./TableComponent";
+import TableRow from "./TableRow";
 import moment from "moment";
 import { v4 as uuidv4 } from "uuid";
 
 const BeingServed = (props) => {
+  console.log(props);
   if (!props) {
     return null;
   }
@@ -11,22 +13,37 @@ const BeingServed = (props) => {
   const tableName = "beingServed-table";
   const theadName = "beingServed-table__thead";
 
-  let timestamp = moment.unix(props.timestamp).utc();
+  moment(props.timestamp).fromNow();
+  let orderTimestamp = moment(props.serving.startTime);
+  let now = moment();
+  let diff = now.subtract(orderTimestamp);
+  let formatted = diff.format("HH:mm:ss");
   const beingServedList = props.serving.map((serve) => {
     // const myTime = moment.unix();
-    let orderTimestamp = moment(props.serving.startTime).utc();
-    let timeSub = timestamp.subtract(orderTimestamp);
-    let timeSinceOrder = moment.utc(timeSub).format("HH:mm:ss");
+    // let orderTimestamp = moment(props.serving.startTime);
+    // let timeSub = timestamp.subtract(orderTimestamp);
+    // let timeSinceOrder = moment(timeSub).format("HH:mm:ss");
+
+    // const orderItem = props.serving.order.map((item) => {
+    //   return orderItem;
+    // });
+    // console.log(orderItem);
 
     return {
-      id: uuidv4(),
+      idKey: serve.id,
       key: uuidv4(),
       items: [
         serve.id,
-        timeSinceOrder,
-        serve.order.map((eachOrder) => {
-          return <tr>{eachOrder}</tr>;
-        }),
+        formatted,
+        <>
+          {serve.order.map((item) => {
+            return (
+              <tr key={item}>
+                <td> {item}</td>
+              </tr>
+            );
+          })}
+        </>,
         // serve.order,
         "Price here",
         // serve.price
@@ -44,11 +61,4 @@ const BeingServed = (props) => {
     </div>
   );
 };
-
 export default BeingServed;
-
-// <ServingID
-// serve={serve}
-// key={serve.id}
-// timeRightNow={props.timeRightNow}
-// />
