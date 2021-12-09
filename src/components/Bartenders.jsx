@@ -1,7 +1,7 @@
-// import Bartender from "./Bartender";
 import TableComponent from "./TableComponent";
 import NewDoingState from "./NewDoingState";
 import { v4 as uuidv4 } from "uuid";
+
 const Bartenders = (props) => {
   if (!props) {
     return null;
@@ -22,8 +22,6 @@ const Bartenders = (props) => {
         bartender.servingCustomer,
       ],
     };
-
-    //<Bartender bartender={bartender} id={uuidv4()} key={uuidv4()} />;
   });
   return (
     <div>

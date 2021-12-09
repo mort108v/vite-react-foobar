@@ -40,17 +40,69 @@
         grid-template-columns: repeat(1, 1fr);
         align-items: center;
         text-align: left;
-        // line-height: 1.3rem;
         justify-content: space-between;
         & table.bartender-table {
             & thead.bartender-table__thead {
-                //  text-align: center;
-                // justify-content: space-evenly;
-                // border: 2px solid set-text-color($secondaryColor);
-                // border-radius: 8px;
-                //  color: ($secondaryColor);
-                & tr th:nth-child(3) {
-                    min-width: 10rem;
+                & tr {
+                    // padding-bottom: .6rem;
+                    & th {
+                        text-align: left;
+                        border-bottom: 2px solid set-borderLine-color($borderLine);
+                        &:nth-child(3) {
+                            min-width: 10rem;
+                            text-align: center;
+                        }
+                        &:nth-child(4) {
+                            text-align: right;
+                        }
+                        &:nth-child(5) {
+                            text-align: right;
+                        }
+                    }
+                }
+            }
+            & tbody {
+                // margin-top: .3rem;
+                & tr td {
+                    text-align: left;
+                }
+                & td:nth-child(4) {
+                    text-align: right;
+                }
+                & td:nth-child(5) {
+                    text-align: right;
+                }
+            }
+        }
+        & table.beingServed-table {
+            & thead.beingServed-table__thead {
+                & tr {
+                    & th {
+                        text-align: left;
+                        border-bottom: 2px solid set-borderLine-color($borderLine);
+                        &:nth-child(3) {
+                            text-align: center;
+                            min-width: 10rem;
+                        }
+                        &:nth-child(4) {
+                            text-align: right;
+                        }
+                    }
+                    &:nth-child(4) {
+                        text-align: right;
+                    }
+                }
+            }
+            & tbody {
+                // margin-top: .3rem;
+                & tr td {
+                    text-align: left;
+                }
+                & td:nth-child(4) {
+                    text-align: right;
+                }
+                & td:nth-child(5) {
+                    text-align: right;
                 }
             }
         }

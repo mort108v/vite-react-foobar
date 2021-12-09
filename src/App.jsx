@@ -26,13 +26,16 @@ const App = () => {
     bartenders: [],
     taps: [],
     storage: [],
+    timestamp: "",
   });
 
   const [momentInTime, setMomentInTime] = useState();
 
   useEffect(() => {
-    setMomentInTime(myTime);
-  }, [allData.serving.startTime, allData.queue.startTime]);
+    setInterval(() => {
+      setMomentInTime(myTime);
+    }, 1000);
+  }, []);
 
   const myTime = moment().format("HH:mm:ss");
 
@@ -46,7 +49,7 @@ const App = () => {
     getAllData();
     setInterval(() => {
       getAllData();
-    }, 5000);
+    }, 1000);
   }, []);
 
   // Fetch Data
@@ -85,7 +88,7 @@ const App = () => {
           <div className="overview-block">
             <BeingServed
               serving={allData.serving}
-              timeRightNow={momentInTime}
+              timestamp={allData.timestamp}
             />
           </div>
           <div className="overview-header">

@@ -16,6 +16,7 @@ $orange-pastel: #F8DDCE;
 $primaryColor: $blue-dark;
 $secondaryColor: $blue-pastel;
 $headerColor: $orange;
+$borderLine: $orange-light;
 * {
     box-sizing: border-box;
     margin: 0;
@@ -32,6 +33,15 @@ $headerColor: $orange;
     }
     @else {
         @return $blue-pastel;
+    }
+}
+
+@function set-borderLine-color($color) {
+    @if (lightness($color) > 40%) {
+        @return $borderLine;
+    }
+    @else {
+        @return $primaryColor;
     }
 }
 
