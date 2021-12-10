@@ -1,126 +1,167 @@
-@import 'fonts';
-.overview {
-    height: 100%;
-    overflow: hidden;
-    align-items: center;
-    text-align: center;
-    &-header {
-        padding-top: 1.5rem;
-        &__top {
-            padding-top: 1.5rem;
-        }
-        &__title {
-            font-size: 1.3rem;
-            padding-bottom: .5rem;
-            padding-top: .5rem;
-            margin-bottom: 1rem;
-            color: set-header-color($headerColor);
-            background: linear-gradient( to right, rgba($primaryColor, 0.8), rgba($headerColor, 0.2));
-            font-family: $shapiro-air;
-            border: 2px solid set-text-color($primaryColor);
-            border-radius: 8px;
-        }
-        // &__paraScroll--div {
-        //     border: solid 5px;
-        //     background-clip: padding-box;
-        //     background-position: center center;
-        //     background-size: cover;
-        //     background-repeat: no-repeat;
-        //     @include transition-ease;
-        //     &-parallaxBackground {
-        //         border-radius: 50px;
-        //         // filter: linear-gradient( to right, rgba($primaryColor, 0.7), rgba($primaryColor, 0.3));
-        //     }
-        // }
-    }
-    &-block {
-        display: -ms-inline-grid;
-        grid-template-columns: repeat(1, 1fr);
-        align-items: center;
-        text-align: left;
-        justify-content: space-between;
-        paddin & table.bartender-table {
-            & thead.bartender-table__thead {
-                & tr {
-                    & th {
-                        text-align: left;
-                        border-bottom: 2px solid set-borderLine-color($borderLineColor);
-                        &:nth-child(3) {
-                            min-width: 10rem;
+        @import 'fonts';
+        .overview {
+            height: 100%;
+            overflow: hidden;
+            align-items: center;
+            text-align: center;
+            &-header {
+                padding-top: 1.5rem;
+                &__top {
+                    padding-top: 1.5rem;
+                }
+                &__title {
+                    font-size: 1.3rem;
+                    padding-bottom: .5rem;
+                    padding-top: .5rem;
+                    margin-bottom: 1rem;
+                    color: set-header-color($headerColor);
+                    background: linear-gradient( to right, rgba($primaryColor, 0.8), rgba($headerColor, 0.2));
+                    font-family: $shapiro-air;
+                    border: 2px solid set-text-color($primaryColor);
+                    border-radius: 8px;
+                }
+                // &__paraScroll--div {
+                //     border: solid 5px;
+                //     background-clip: padding-box;
+                //     background-position: center center;
+                //     background-size: cover;
+                //     background-repeat: no-repeat;
+                //     @include transition-ease;
+                //     &-parallaxBackground {
+                //         border-radius: 50px;
+                //         // filter: linear-gradient( to right, rgba($primaryColor, 0.7), rgba($primaryColor, 0.3));
+                //     }
+                // }
+            }
+            &-block {
+                display: -ms-inline-grid;
+                grid-template-columns: repeat(1, 1fr);
+                align-items: center;
+                text-align: left;
+                justify-content: space-between;
+                & table.bartender-table {
+                    & thead.bartender-table__thead {
+                        & tr {
+                            & th {
+                                text-align: left;
+                                border-bottom: 2px solid set-borderLine-color($borderLineColor);
+                                &:nth-child(3) {
+                                    min-width: 10rem;
+                                    text-align: left;
+                                }
+                                &:nth-child(4) {
+                                    text-align: right;
+                                }
+                                &:nth-child(5) {
+                                    text-align: right;
+                                }
+                            }
+                        }
+                    }
+                    & tbody {
+                        // margin-top: .3rem;
+                        & tr td {
                             text-align: left;
                         }
-                        &:nth-child(4) {
+                        & td:nth-child(4) {
                             text-align: right;
                         }
-                        &:nth-child(5) {
+                        & td:nth-child(5) {
                             text-align: right;
                         }
                     }
                 }
-            }
-            & tbody {
-                // margin-top: .3rem;
-                & tr td {
-                    text-align: left;
+                & table.beingServed-table {
+                    & thead.beingServed-table__thead {
+                        & tr {
+                            & th {
+                                text-align: left;
+                                border-bottom: 2px solid set-borderLine-color($borderLineColor);
+                                &:nth-child(3) {
+                                    text-align: left;
+                                    min-width: 10rem;
+                                }
+                                &:nth-child(4) {
+                                    text-align: right;
+                                }
+                            }
+                            &:nth-child(4) {
+                                text-align: right;
+                            }
+                            & p {
+                                padding-bottom: 2.3rem;
+                            }
+                        }
+                    }
+                    & tbody {
+                        & tr.table-body__row {
+                            padding: 3px;
+                            margin: 3px;
+                            vertical-align: top;
+                            border: 2px solid set-borderLine-color($orange);
+                            & td {
+                                text-align: left;
+                                &:nth-child(4) {
+                                    text-align: right;
+                                    vertical-align: bottom;
+                                }
+                                &:nth-child(5) {
+                                    text-align: right;
+                                }
+                            }
+                        }
+                    }
                 }
-                & td:nth-child(4) {
-                    text-align: right;
-                }
-                & td:nth-child(5) {
-                    text-align: right;
+                & table.beingQueued-table {
+                    & thead.beingQueued-table__thead {
+                        & tr {
+                            & th {
+                                text-align: left;
+                                border-bottom: 2px solid set-borderLine-color($borderLineColor);
+                                &:nth-child(3) {
+                                    text-align: left;
+                                    min-width: 10rem;
+                                }
+                                &:nth-child(4) {
+                                    text-align: right;
+                                }
+                            }
+                            &:nth-child(4) {
+                                text-align: right;
+                            }
+                            & p {
+                                padding-bottom: 2.3rem;
+                            }
+                        }
+                    }
+                    & tbody {
+                        & tr.table-body__row {
+                            padding: 3px;
+                            margin: 3px;
+                            vertical-align: top;
+                            border: 2px solid set-borderLine-color($orange);
+                            & td {
+                                text-align: left;
+                                &:nth-child(4) {
+                                    text-align: right;
+                                    vertical-align: bottom;
+                                }
+                                &:nth-child(5) {
+                                    text-align: right;
+                                }
+                            }
+                        }
+                    }
                 }
             }
         }
-        & table.beingServed-table {
-            & thead.beingServed-table__thead {
-                & tr {
-                    & th {
-                        text-align: left;
-                        border-bottom: 2px solid set-borderLine-color($borderLineColor);
-                        &:nth-child(3) {
-                            text-align: left;
-                            min-width: 10rem;
-                        }
-                        &:nth-child(4) {
-                            text-align: right;
-                        }
-                    }
-                    &:nth-child(4) {
-                        text-align: right;
-                    }
-                    & p {
-                        padding-bottom: 2.3rem;
-                    }
-                }
-            }
-            & tbody {
-                & tr.table-body__row {
-                    padding: 3px;
-                    margin: 3px;
-                    vertical-align: top;
-                    border: 2px solid set-borderLine-color($orange);
-                    & td {
-                        text-align: left;
-                        &:nth-child(4) {
-                            text-align: right;
-                            vertical-align: bottom;
-                        }
-                        &:nth-child(5) {
-                            text-align: right;
-                        }
-                    }
-                }
+        
+        .react-parallax-background-children {
+            border: solid 5px;
+            &.react-parallax-content {
+                background-position: center center;
+                background-size: cover;
+                background-repeat: no-repeat;
+                border-radius: 20px;
             }
         }
-    }
-}
-
-.react-parallax-background-children {
-    border: solid 5px;
-    &.react-parallax-content {
-        background-position: center center;
-        background-size: cover;
-        background-repeat: no-repeat;
-        border-radius: 20px;
-    }
-}

@@ -1,17 +1,51 @@
-import QueueID from "./QueueID";
+import TableComponent from "./TableComponent";
+import moment from "moment";
 
 const BeingQueued = (props) => {
   if (!props) {
     return null;
   }
-  const beingQueuedList = props.queue.map((que) => {
-    return <QueueID que={que} key={que.id} timeRightNow={props.timeRightNow} />;
+
+  const theadData = ["ID", "Time since order", "Order", "Price"];
+  const tableName = "beingQueued-table";
+  const theadName = "beingQueued-table__thead";
+
+  const beingQueuedList = props.queue.map((q) => {
+    let momentInTime = props.timestamp;
+    let orderTime = q.startTime;
+    let orderDuration = momentInTime - orderTime;
+    let orderDurationFormatted = moment.utc(orderDuration).format("mm:ss");
+
+    return {
+      id: q.id,
+      // key: uuidv4(),
+      items: [
+        q.id,
+        orderDurationFormatted,
+        <>
+          {q.order.map((item, index) => {
+            return (
+              <p key={index}>
+                <> {item}</>
+              </p>
+            );
+          })}
+        </>,
+        // serve.order,
+        "Price here",
+        // serve.price
+      ],
+    };
   });
-  return <>{beingQueuedList}</>;
+  return (
+    <div>
+      <TableComponent
+        theadData={theadData}
+        tbodyData={beingQueuedList}
+        theadName={theadName}
+        tableName={tableName}
+      />
+    </div>
+  );
 };
-
 export default BeingQueued;
-
-// const addOne = useCallback(() => {setNumbers((currentNumbers) => [ ...currentNumbers, currentNumbers.length + 1,]);}, []);
-
-// const sum = useMemo(() => numbers.reduce((a, v) => a + v, 0), [numbers]);

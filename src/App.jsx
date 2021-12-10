@@ -119,7 +119,11 @@ const App = () => {
             <h3 className="overview-header__title">Orders in que</h3>
           </div>
           <div className="overview-block">
-            <BeingQueued queue={allData.queue} timeRightNow={momentInTime} />
+            <BeingQueued
+              queue={allData.queue}
+              timestamp={allData.timestamp}
+              startTime={allData.queue.startTime}
+            />
           </div>
           <div className="overview-header">
             <h3 className="overview-header__title">Taps in use</h3>
