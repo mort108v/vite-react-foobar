@@ -25,12 +25,9 @@ const App = () => {
     const root = document.documentElement;
     root?.style.setProperty(
       "--background-color",
-      darkTheme ? "$primaryColor" : "$secondaryColor"
+      darkTheme ? "#16152b" : "#CACEFC"
     );
-    root?.style.setProperty(
-      "--text-color",
-      darkTheme ? "$secondaryColor" : "$primaryColor"
-    );
+    root?.style.setProperty("--text-color", darkTheme ? "#CACEFC" : "#16152b");
   }, [darkTheme]);
 
   const [allData, setAllData] = useState({
@@ -50,6 +47,12 @@ const App = () => {
       setMomentInTime(myTime);
     }, 1000);
   }, []);
+
+  // const [timeDiff, setTimeDiff] = useState();
+
+  // useEffect(() => {
+  //   setTimeDiff(TimeTick());
+  // }, [momentInTime]);
 
   const myTime = moment().format("HH:mm:ss");
 
@@ -84,7 +87,10 @@ const App = () => {
         <Barinfo barName={allData.bar.name} />
         <Social />
         <TimeTick timeRightNow={myTime} closingTime={allData.bar.closingTime} />
-        <button onClick={() => setDarkTheme(!darkTheme)}>
+        <button
+          className="btn-colorTheme"
+          onClick={() => setDarkTheme(!darkTheme)}
+        >
           {darkTheme ? "Light theme" : "Dark theme"}
         </button>
       </header>
@@ -106,6 +112,7 @@ const App = () => {
             <BeingServed
               serving={allData.serving}
               timestamp={allData.timestamp}
+              startTime={allData.serving.startTime}
             />
           </div>
           <div className="overview-header">

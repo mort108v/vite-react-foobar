@@ -2,9 +2,9 @@ import React from "react";
 
 const TableRow = ({ data }) => {
   return (
-    <tr className="table-row__body">
-      {data.map((item) => {
-        return <td key={item}>{item}</td>;
+    <tr className="table-body__row">
+      {data.map((item, index) => {
+        return <td key={index}>{item}</td>;
       })}
     </tr>
   );

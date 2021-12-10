@@ -8,8 +8,8 @@ const TableComponent = ({ theadData, tbodyData, tableName, theadName }) => {
     <table className={tableName}>
       <thead className={theadName}>
         <tr className="table-head__row">
-          {theadData.map((thead) => {
-            return <TableHeadItem key={thead} item={thead} />;
+          {theadData.map((thead, index) => {
+            return <TableHeadItem key={index} item={thead} />;
           })}
         </tr>
       </thead>

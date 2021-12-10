@@ -4,8 +4,6 @@
     overflow: hidden;
     align-items: center;
     text-align: center;
-    background: linear-gradient( to right, rgba($primaryColor, 0.7), rgba($primaryColor, 0.3)), url('') center top;
-    background-size: cover;
     &-header {
         padding-top: 1.5rem;
         &__top {
@@ -41,13 +39,12 @@
         align-items: center;
         text-align: left;
         justify-content: space-between;
-        & table.bartender-table {
+        paddin & table.bartender-table {
             & thead.bartender-table__thead {
                 & tr {
-                    // padding-bottom: .6rem;
                     & th {
                         text-align: left;
-                        border-bottom: 2px solid set-borderLine-color($borderLine);
+                        border-bottom: 2px solid set-borderLine-color($borderLineColor);
                         &:nth-child(3) {
                             min-width: 10rem;
                             text-align: left;
@@ -79,7 +76,7 @@
                 & tr {
                     & th {
                         text-align: left;
-                        border-bottom: 2px solid set-borderLine-color($borderLine);
+                        border-bottom: 2px solid set-borderLine-color($borderLineColor);
                         &:nth-child(3) {
                             text-align: left;
                             min-width: 10rem;
@@ -91,6 +88,9 @@
                     &:nth-child(4) {
                         text-align: right;
                     }
+                    & p {
+                        padding-bottom: 2.3rem;
+                    }
                 }
             }
             & tbody {
@@ -99,16 +99,16 @@
                     margin: 3px;
                     vertical-align: top;
                     border: 2px solid set-borderLine-color($orange);
-                }
-                & tr td {
-                    text-align: left;
-                }
-                & td:nth-child(4) {
-                    text-align: right;
-                    vertical-align: bottom;
-                }
-                & td:nth-child(5) {
-                    text-align: right;
+                    & td {
+                        text-align: left;
+                        &:nth-child(4) {
+                            text-align: right;
+                            vertical-align: bottom;
+                        }
+                        &:nth-child(5) {
+                            text-align: right;
+                        }
+                    }
                 }
             }
         }

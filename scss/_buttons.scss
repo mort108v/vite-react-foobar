@@ -115,6 +115,15 @@ $lg: new-breakpoint(min-width 1024px);
     }
 }
 
+.btn-colorTheme {
+    width: 100px;
+    height: 25px;
+    border-radius: 5px;
+    color: var(--text-color);
+    background: var(--background-color);
+    border: 2px solid var(--text-color);
+}
+
 @keyframes loading {
     100% {
         transform: rotate(360deg);

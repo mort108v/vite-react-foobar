@@ -12,13 +12,17 @@ const TimeTick = (props) => {
   }
 
   let momentInTime = moment(props.timeRightNow, "HH:mm:ss");
-  let timeDiff = barClosing.subtract(momentInTime);
-  let timeLeft = moment.utc(timeDiff).format("HH:mm:ss");
+
+  let closingTimeDiff = barClosing.subtract(momentInTime);
+
+  let timeLeft = moment.utc(closingTimeDiff).format("HH:mm:ss");
 
   return (
-    <div className="Time">
-      <h2>{timeLeft}</h2>
-    </div>
+    <p className="Time">
+      {"Time till closing: "}
+
+      <>{timeLeft}</>
+    </p>
   );
 };
 

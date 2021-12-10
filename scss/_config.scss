@@ -16,7 +16,9 @@ $orange-pastel: #F8DDCE;
 $primaryColor: $blue-dark;
 $secondaryColor: $blue-pastel;
 $headerColor: $orange;
-$borderLine: $orange-light;
+$borderLineColor: $orange-light;
+// $background-color: #16152b;
+// $text-color: #16152b;
 * {
     box-sizing: border-box;
     margin: 0;
@@ -29,15 +31,6 @@ $borderLine: $orange-light;
 
 @function set-text-color($color) {
     @if (lightness($color) > 40%) {
-        @return $blue-dusk;
-    }
-    @else {
-        @return $blue-pastel;
-    }
-}
-
-@function set-bgr-color($color) {
-    @if ($color==$primaryColor) {
         @return $primaryColor;
     }
     @else {
@@ -45,9 +38,17 @@ $borderLine: $orange-light;
     }
 }
 
+// @function set-bgr-color($color) {
+//     @if ($color==$primaryColor) {
+//         @return $primaryColor;
+//     }
+//     @else {
+//         @return $secondaryColor;
+//     }
+// }
 @function set-borderLine-color($color) {
-    @if (lightness($color) > 40%) {
-        @return $borderLine;
+    @if (lightness($color) > 30%) {
+        @return $borderLineColor;
     }
     @else {
         @return $primaryColor;
@@ -55,7 +56,7 @@ $borderLine: $orange-light;
 }
 
 @function set-header-color($color) {
-    @if (lightness($color) > 40%) {
+    @if (lightness($color) > 30%) {
         @return $headerColor;
     }
     @else {
