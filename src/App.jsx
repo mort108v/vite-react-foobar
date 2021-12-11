@@ -86,13 +86,13 @@ const App = () => {
       <header className="App-header">
         <Barinfo barName={allData.bar.name} />
         <Social />
-        <TimeTick timeRightNow={myTime} closingTime={allData.bar.closingTime} />
         <button
           className="btn-colorTheme"
           onClick={() => setDarkTheme(!darkTheme)}
         >
           {darkTheme ? "Light theme" : "Dark theme"}
         </button>
+        <TimeTick timeRightNow={myTime} closingTime={allData.bar.closingTime} />
       </header>
       <section id="main">
         <section id="overview">

@@ -18,11 +18,11 @@ const TimeTick = (props) => {
   let timeLeft = moment.utc(closingTimeDiff).format("HH:mm:ss");
 
   return (
-    <p className="Time">
-      {"Time till closing: "}
+    <h2 className="Time">
+      {"Countdown: "}
 
       <>{timeLeft}</>
-    </p>
+    </h2>
   );
 };
 

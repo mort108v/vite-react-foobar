@@ -122,6 +122,12 @@ $lg: new-breakpoint(min-width 1024px);
     color: var(--text-color);
     background: var(--background-color);
     border: 2px solid var(--text-color);
+    cursor: pointer;
+    @include transition-ease;
+    &:hover {
+        color: $orange;
+        border: 2px solid $orange;
+    }
 }
 
 @keyframes loading {

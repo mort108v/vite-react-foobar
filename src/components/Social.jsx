@@ -1,5 +1,3 @@
-// import { FaTimes } from "react-icons/fa";
-
 const Social = () => {
   return (
     <h2 className="social-icons">

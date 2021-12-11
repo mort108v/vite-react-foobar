@@ -1,23 +1,56 @@
 @include media-md {
-    .overview {
-        &-block {
-            grid-template-columns: repeat(3, 1fr);
+    .App-header {
+        width: 90vw;
+        & h1,
+        h2,
+        h3 {
+            font-size: 1.1rem;
+        }
+    }
+    #main {
+        width: 90vw;
+        &.overview {
+            &-block {
+                grid-template-columns: repeat(3, 1fr);
+            }
         }
     }
 }
 
 @include media-lg {
-    .overview {
-        &-block {
-            grid-template-columns: repeat(4, 1fr);
+    .App-header {
+        width: 80vw;
+        & h1,
+        h2,
+        h3 {
+            font-size: 1.3rem;
+        }
+    }
+    #main {
+        width: 80vw;
+        &.overview {
+            &-block {
+                grid-template-columns: repeat(4, 1fr);
+            }
         }
     }
 }
 
 @include media-xl {
-    .overview {
-        &-block {
-            grid-template-columns: repeat(5, 1fr);
+    .App-header {
+        width: 65vw;
+        & h1,
+        h2,
+        h3 {
+            font-size: 1.5rem;
+        }
+    }
+    #main {
+        width: 65vw;
+        &.overview {
+            &-block {
+                grid-template-columns: repeat(5, 1fr);
+            }
         }
     }
 }

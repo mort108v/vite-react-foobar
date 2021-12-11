@@ -25,6 +25,7 @@ ul li {
 h1,
 h2,
 h3 {
+    font-size: .9rem;
     font-weight: 600;
     color: set-header-color($headerColor);
 }
@@ -34,28 +35,10 @@ a {
     text-decoration: none;
 }
 
-// .g_to_interact_with {
-//     fill: $orange;
-// }
-.text-secondary {
-    color: $secondaryColor;
-}
-
-#main {
-    height: 100%;
-    width: 70vw;
-    position: sticky;
-    text-align: center;
+button {
     align-content: center;
+    text-align: center;
     margin: 0 auto;
-    margin-top: .5vh;
-    padding: 30px;
-    border: 2px solid set-text-color($primaryColor);
-    border-radius: 10px;
-}
-
-.custom-bg img {
-    border-radius: 10px;
 }
 
 .App-header {
@@ -67,8 +50,11 @@ a {
     align-content: center;
     text-align: center;
     margin: 0 auto;
+    justify-content: space-evenly;
+    display: inline-flex;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 15px;
     color: ($secondaryColor);
     background: linear-gradient( to bottom, rgba($primaryColor, 1.0), rgba($primaryColor, 0.0)), url('') center top;
     .social-icons {
@@ -81,6 +67,30 @@ a {
             }
         }
     }
+}
+
+// .g_to_interact_with {
+//     fill: $orange;
+// }
+.text-secondary {
+    color: $secondaryColor;
+}
+
+#main {
+    height: 100%;
+    // width: 70vw;
+    position: sticky;
+    text-align: center;
+    align-content: center;
+    margin: 0 auto;
+    margin-top: .5vh;
+    padding: 30px;
+    border: 2px solid set-text-color($primaryColor);
+    border-radius: 10px;
+}
+
+.custom-bg img {
+    border-radius: 10px;
 }
 
 table {
@@ -110,8 +120,8 @@ footer {
     background: linear-gradient( to top, rgba($primaryColor, 1.0), rgba($primaryColor, 0.0)), url('') center top;
     bottom: 0.4rem;
     text-align: right;
-    color: set-text-color($orange);
-    padding-right: 1.3rem;
+    color: set-text-color($headerColor);
+    padding: 1.3rem;
 }
 
 // .paraScroll {
