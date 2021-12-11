@@ -120,8 +120,18 @@ footer {
     background: linear-gradient( to top, rgba($primaryColor, 1.0), rgba($primaryColor, 0.0)), url('') center top;
     bottom: 0.4rem;
     text-align: right;
-    color: set-text-color($headerColor);
+    color: set-header-color($headerColor);
     padding: 1.3rem;
+}
+
+.hide {
+    display: none;
+    @include transition-ease;
+}
+
+i {
+    align-self: right;
+    text-align: right;
 }
 
 // .paraScroll {

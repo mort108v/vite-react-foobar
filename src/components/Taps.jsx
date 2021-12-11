@@ -1,14 +1,51 @@
-import Tap from "./Tap";
-import { v4 as uuidv4 } from "uuid";
+import TableComponent from "./TableComponent";
+import { useState } from "react";
 
 const Taps = (props) => {
   if (!props) {
     return null;
   }
-  const tapList = props.taps.map((tap) => {
-    return <Tap tap={tap} key={uuidv4()} />;
+
+  const [hide, setHide] = useState(false);
+
+  const theadData = ["ID", "Level", "Capacity", "Beertype", "In use"];
+  const tableName = "taps-table";
+  const theadName = "taps-table__thead";
+
+  const tapsList = props.taps.map((tap) => {
+    return {
+      id: tap.id,
+      key: tap.id,
+      items: [tap.id + 1, tap.level, tap.capacity, tap.beer, tap.inUse],
+    };
   });
-  return <>{tapList}</>;
+
+  return (
+    <>
+      <div className="overview-header__top">
+        <h3 className="overview-header__title" onClick={() => setHide(!hide)}>
+          Taps
+          {hide ? (
+            <i className="fa fa-arrow-circle-down" aria-hidden="true"></i>
+          ) : (
+            <i className="fa fa-arrow-circle-up" aria-hidden="true"></i>
+          )}
+        </h3>
+      </div>
+      {hide ? (
+        <div className="overview-block">
+          <div>
+            <TableComponent
+              theadData={theadData}
+              tbodyData={tapsList}
+              theadName={theadName}
+              tableName={tableName}
+            />
+          </div>
+        </div>
+      ) : null}
+    </>
+  );
 };
 
 export default Taps;

@@ -30,6 +30,8 @@ const App = () => {
     root?.style.setProperty("--text-color", darkTheme ? "#CACEFC" : "#16152b");
   }, [darkTheme]);
 
+  useEffect(() => {});
+
   const [allData, setAllData] = useState({
     bar: { name: "", closingTime: [] },
     serving: [{ id: "", startTime: "", order: [] }],
@@ -47,12 +49,6 @@ const App = () => {
       setMomentInTime(myTime);
     }, 1000);
   }, []);
-
-  // const [timeDiff, setTimeDiff] = useState();
-
-  // useEffect(() => {
-  //   setTimeDiff(TimeTick());
-  // }, [momentInTime]);
 
   const myTime = moment().format("HH:mm:ss");
 
@@ -96,47 +92,20 @@ const App = () => {
       </header>
       <section id="main">
         <section id="overview">
-          <div className="overview-header__parallax">
-            <ParallaxComponent />
-          </div>
-          <div className="overview-header__top">
-            <h3 className="overview-header__title">Bartenders</h3>
-          </div>
-          <div className="overview-block">
-            <Bartenders bartenders={allData.bartenders} />
-          </div>
-          <div className="overview-header">
-            <h3 className="overview-header__title">Being served</h3>
-          </div>
-          <div className="overview-block">
-            <BeingServed
-              serving={allData.serving}
-              timestamp={allData.timestamp}
-              startTime={allData.serving.startTime}
-            />
-          </div>
-          <div className="overview-header">
-            <h3 className="overview-header__title">Orders in que</h3>
-          </div>
-          <div className="overview-block">
-            <BeingQueued
-              queue={allData.queue}
-              timestamp={allData.timestamp}
-              startTime={allData.queue.startTime}
-            />
-          </div>
-          <div className="overview-header">
-            <h3 className="overview-header__title">Taps in use</h3>
-          </div>
-          <div className="overview-block">
-            <Taps taps={allData.taps} />
-          </div>
-          <div className="overview-header">
-            <h3 className="overview-header__title">Kegs in storage</h3>
-          </div>
-          <div className="overview-block">
-            <BeerStorage storage={allData.storage} />
-          </div>
+          <ParallaxComponent />
+          <Bartenders bartenders={allData.bartenders} />
+          <BeingServed
+            serving={allData.serving}
+            timestamp={allData.timestamp}
+            startTime={allData.serving.startTime}
+          />
+          <BeingQueued
+            queue={allData.queue}
+            timestamp={allData.timestamp}
+            startTime={allData.queue.startTime}
+          />
+          <Taps taps={allData.taps} />
+          <BeerStorage storage={allData.storage} />
         </section>
       </section>
       <section id="bottom">

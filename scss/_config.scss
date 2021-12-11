@@ -56,7 +56,7 @@ $borderLineColor: $orange-light;
 }
 
 @function set-header-color($color) {
-    @if (lightness($color) > 30%) {
+    @if (lightness($color) > 40%) {
         @return $headerColor;
     }
     @else {
