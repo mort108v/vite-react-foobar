@@ -19,8 +19,6 @@ const TimeTick = (props) => {
 
   return (
     <h2 className="Time">
-      {"Countdown: "}
-
       <>{timeLeft}</>
     </h2>
   );

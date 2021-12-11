@@ -5,36 +5,31 @@
             align-items: center;
             text-align: center;
             &-header {
-                padding-top: 1.5rem;
+                display: grid;
+                grid-template-columns: repeat(1fr, 4);
                 &__top {
-                    padding-top: 1.5rem;
+                    padding-top: .5rem;
                 }
                 &__title {
-                    font-size: 1.3rem;
+                    // font-size: 1.3rem;
                     padding-bottom: .5rem;
                     padding-top: .5rem;
-                    margin-bottom: 1rem;
-                    color: set-header-color($headerColor);
-                    background: linear-gradient( to right, rgba($primaryColor, 0.8), rgba($headerColor, 0.2));
-                    font-family: $shapiro-air;
+                    // display: grid;
+                    // grid-template-columns: 1fr, 1fr;
+                    color: var(--text-color);
+                    background: linear-gradient( to right, rgba($headerColor, 0.3), rgba($primaryColor, 1), rgba($headerColor, 0.3));
+                    font-family: $shapiro-feather;
                     border: 2px solid set-text-color($primaryColor);
                     border-radius: 8px;
+                    cursor: pointer;
+                    @include transition-ease;
+                    &:hover {
+                        color: $orange;
+                    }
                 }
-                // &__paraScroll--div {
-                //     border: solid 5px;
-                //     background-clip: padding-box;
-                //     background-position: center center;
-                //     background-size: cover;
-                //     background-repeat: no-repeat;
-                //     @include transition-ease;
-                //     &-parallaxBackground {
-                //         border-radius: 50px;
-                //         // filter: linear-gradient( to right, rgba($primaryColor, 0.7), rgba($primaryColor, 0.3));
-                //     }
-                // }
             }
             &-block {
-                display: -ms-inline-grid;
+                display: grid;
                 grid-template-columns: repeat(1, 1fr);
                 align-items: center;
                 text-align: left;
@@ -95,8 +90,8 @@
                     }
                     & tbody {
                         & tr.table-body__row {
-                            padding: 3px;
-                            margin: 3px;
+                            // padding: 3px;
+                            // margin: 3px;
                             vertical-align: top;
                             border: 2px solid set-borderLine-color($orange);
                             & td {
@@ -157,11 +152,9 @@
         }
         
         .react-parallax-background-children {
-            border: solid 5px;
             &.react-parallax-content {
                 background-position: center center;
                 background-size: cover;
                 background-repeat: no-repeat;
-                border-radius: 20px;
             }
         }

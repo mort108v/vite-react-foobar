@@ -40,14 +40,16 @@ const BeingQueued = (props) => {
   return (
     <>
       <div className="overview-header__top">
-        <h3 className="overview-header__title" onClick={() => setHide(!hide)}>
-          Orders queued
-          {hide ? (
-            <i className="fa fa-arrow-circle-down" aria-hidden="true"></i>
-          ) : (
-            <i className="fa fa-arrow-circle-up" aria-hidden="true"></i>
-          )}
-        </h3>
+        <div className="overview-header__title" onClick={() => setHide(!hide)}>
+          <p className="overview-header__title--name">{"Orders queued "}</p>
+          <p className="overview-header__title--arrow">
+            {hide ? (
+              <i className="fa fa-arrow-circle-up" aria-hidden="true"></i>
+            ) : (
+              <i className="fa fa-arrow-circle-down" aria-hidden="true"></i>
+            )}
+          </p>
+        </div>
       </div>
       {hide ? (
         <div className="overview-block">

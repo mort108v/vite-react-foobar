@@ -1,11 +1,11 @@
 @include media-md {
     .App-header {
         width: 90vw;
-        & h1,
-        h2,
-        h3 {
-            font-size: 1.1rem;
-        }
+        // & h1,
+        // h2,
+        // h3 {
+        //     font-size: 1.1rem;
+        // }
     }
     #main {
         width: 90vw;

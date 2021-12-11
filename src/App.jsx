@@ -1,7 +1,9 @@
 // api.randomuser.me?results=5
 // For exam end: git clone --mirror
 // Run this once a day in screenshot folder!
-// $ pageres  https://nifty-snyder-6cd116.netlify.app/index.html 1024x768 1366x768 1600x900 --delay=5
+// $ pageres  https://nifty-snyder-6cd116.netlify.app/index.html 1024x768 1600x900 --delay=5
+
+// $ pageres  https://nifty-snyder-6cd116.netlify.app/index.html 1334x750 750x1334 900x1600   --delay=5
 
 import { useState, useEffect } from "react";
 import moment from "moment";
@@ -82,30 +84,36 @@ const App = () => {
       <header className="App-header">
         <Barinfo barName={allData.bar.name} />
         <Social />
-        <button
-          className="btn-colorTheme"
-          onClick={() => setDarkTheme(!darkTheme)}
-        >
-          {darkTheme ? "Light theme" : "Dark theme"}
-        </button>
+        <div className="App-header__btn">
+          <button
+            className="btn-colorTheme"
+            onClick={() => setDarkTheme(!darkTheme)}
+          >
+            {darkTheme ? (
+              <i class="fa fa-sun fa-1x" aria-hidden="true"></i>
+            ) : (
+              <i class="fa fa-moon fa-1x" aria-hidden="true"></i>
+            )}
+          </button>
+        </div>
         <TimeTick timeRightNow={myTime} closingTime={allData.bar.closingTime} />
       </header>
       <section id="main">
         <section id="overview">
           <ParallaxComponent />
-          <Bartenders bartenders={allData.bartenders} />
           <BeingServed
             serving={allData.serving}
             timestamp={allData.timestamp}
             startTime={allData.serving.startTime}
           />
+          <Taps taps={allData.taps} />
+          <Bartenders bartenders={allData.bartenders} />
+          <BeerStorage storage={allData.storage} />
           <BeingQueued
             queue={allData.queue}
             timestamp={allData.timestamp}
             startTime={allData.queue.startTime}
           />
-          <Taps taps={allData.taps} />
-          <BeerStorage storage={allData.storage} />
         </section>
       </section>
       <section id="bottom">

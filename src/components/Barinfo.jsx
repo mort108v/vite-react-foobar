@@ -3,6 +3,6 @@ const Barinfo = (props) => {
   if (!props) {
     return null;
   }
-  return <h2 className="NameTheBar"> {props.barName} Dashboard</h2>;
+  return <h3 className="NameTheBar"> {props.barName} </h3>;
 };
 export default Barinfo;

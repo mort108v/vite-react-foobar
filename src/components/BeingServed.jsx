@@ -42,11 +42,11 @@ const BeingServed = (props) => {
     <>
       <div className="overview-header__top">
         <h3 className="overview-header__title" onClick={() => setHide(!hide)}>
-          Being served
+          {"Serving "}
           {hide ? (
-            <i className="fa fa-arrow-circle-down" aria-hidden="true"></i>
-          ) : (
             <i className="fa fa-arrow-circle-up" aria-hidden="true"></i>
+          ) : (
+            <i className="fa fa-arrow-circle-down" aria-hidden="true"></i>
           )}
         </h3>
       </div>

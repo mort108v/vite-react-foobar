@@ -25,7 +25,7 @@ ul li {
 h1,
 h2,
 h3 {
-    font-size: .9rem;
+    font-size: 1rem;
     font-weight: 600;
     color: set-header-color($headerColor);
 }
@@ -45,20 +45,24 @@ button {
     position: relative;
     z-index: 2;
     height: auto;
-    width: 100vw;
-    padding: 2rem 0 2rem 0;
+    padding: 10px;
+    top: .8rem;
     align-content: center;
-    text-align: center;
+    vertical-align: center;
     margin: 0 auto;
-    justify-content: space-evenly;
-    display: inline-flex;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    column-gap: 15px;
+    column-gap: 10px;
     color: ($secondaryColor);
-    background: linear-gradient( to bottom, rgba($primaryColor, 1.0), rgba($primaryColor, 0.0)), url('') center top;
-    .social-icons {
+    background: linear-gradient( to right, rgba($headerColor, 0.3), rgba($primaryColor, 1), rgba($headerColor, 0.3));
+    border: 2px solid set-text-color($primaryColor);
+    border-radius: 10px;
+    & .NameTheBar {
+        text-align: left;
+    }
+    & .social-icons {
         z-index: 2;
+        text-align: right;
         a {
             padding: 0 0.4rem 0 0.4rem;
             @include transition-ease;
@@ -67,26 +71,31 @@ button {
             }
         }
     }
-}
-
-// .g_to_interact_with {
-//     fill: $orange;
-// }
-.text-secondary {
-    color: $secondaryColor;
+    & .App-header__btn {
+        align-content: right;
+        text-align: right;
+        color: var(--text-color);
+        @include transition-ease;
+        &:hover {
+            color: $orange;
+        }
+    }
+    & .Time {
+        text-align: right;
+    }
 }
 
 #main {
     height: 100%;
-    // width: 70vw;
     position: sticky;
     text-align: center;
     align-content: center;
     margin: 0 auto;
-    margin-top: .5vh;
-    padding: 30px;
+    margin-top: 4.5vh;
+    padding: 10px;
     border: 2px solid set-text-color($primaryColor);
     border-radius: 10px;
+    background: linear-gradient( to right, rgba($headerColor, 0.3), rgba($primaryColor, 1), rgba($headerColor, 0.3));
 }
 
 .custom-bg img {
@@ -94,7 +103,7 @@ button {
 }
 
 table {
-    // border-collapse:;
+    @include transition-ease;
     width: 100%;
     & thead {
         & tr {
