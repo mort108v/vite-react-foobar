@@ -98,39 +98,49 @@ const App = () => {
         </div>
         <TimeTick timeRightNow={myTime} closingTime={allData.bar.closingTime} />
       </header>
-      <section id="main">
-        <section id="overview">
+      <div id="main">
+        <div className="overview-header-top">
+          <ParallaxComponent />
+        </div>
+        <div className="overview">
           <div className="overview-header">
-            <ParallaxComponent />
+            <div className="wrapper">
+              <BeingServed
+                serving={allData.serving}
+                timestamp={allData.timestamp}
+                startTime={allData.serving.startTime}
+              />
+            </div>
           </div>
           <div className="overview-header">
-            <BeingServed
-              serving={allData.serving}
-              timestamp={allData.timestamp}
-              startTime={allData.serving.startTime}
-            />
+            <div className="wrapper">
+              <Bartenders bartenders={allData.bartenders} />
+            </div>
           </div>
           <div className="overview-header">
-            <Bartenders bartenders={allData.bartenders} />
+            <div className="wrapper">
+              <Taps taps={allData.taps} />
+            </div>
           </div>
           <div className="overview-header">
-            <Taps taps={allData.taps} />
+            <div className="wrapper">
+              <BeerStorage storage={allData.storage} />
+            </div>
           </div>
           <div className="overview-header">
-            <BeerStorage storage={allData.storage} />
+            <div className="wrapper">
+              <BeingQueued
+                queue={allData.queue}
+                timestamp={allData.timestamp}
+                startTime={allData.queue.startTime}
+              />
+            </div>
           </div>
-          <div className="overview-header">
-            <BeingQueued
-              queue={allData.queue}
-              timestamp={allData.timestamp}
-              startTime={allData.queue.startTime}
-            />
-          </div>
-        </section>
-      </section>
-      <section id="bottom">
+        </div>
+      </div>
+      <div id="bottom">
         <footer> Copyright 2021 &copy; s1xp4c design</footer>
-      </section>
+      </div>
     </div>
   );
 };

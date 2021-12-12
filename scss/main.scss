@@ -57,6 +57,7 @@ button {
     background: linear-gradient( to right, rgba($headerColor, 0.3), rgba($primaryColor, 1), rgba($headerColor, 0.3));
     border: 2px solid set-text-color($primaryColor);
     border-radius: 10px;
+    @include transition-ease;
     & .NameTheBar {
         text-align: left;
     }
@@ -96,6 +97,7 @@ button {
     padding: 10px;
     border: 2px solid set-text-color($primaryColor);
     border-radius: 10px;
+    @include transition-ease;
     // background: linear-gradient( to right, rgba($headerColor, 0.3), rgba($primaryColor, 1), rgba($headerColor, 0.3));
 }
 
@@ -103,6 +105,10 @@ button {
     border-radius: 10px;
 }
 
+// Not working??
+// *.__data--row {
+//     @include transition-ease;
+// }
 footer {
     font-size: 1rem;
     position: relative;

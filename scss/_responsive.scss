@@ -1,57 +1,46 @@
 @include media-md {
     .App-header {
-        width: 90vw;
-        // & h1,
-        // h2,
-        // h3 {
-        //     font-size: 1.1rem;
-        // }
+        width: 95vw;
     }
     #main {
-        width: 90vw;
-        &.overview {
-            &-block {
-                grid-template-columns: repeat(3, 1fr);
-            }
-        }
+        width: 95vw;
+    }
+    .overview {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: auto;
+        height: 100vh;
+        &.wrapper {}
     }
 }
 
 @include media-lg {
     .App-header {
-        width: 80vw;
+        width: 95vw;
         & h1,
         h2,
         h3 {
             font-size: 1.3rem;
         }
     }
-    #main {
-        width: 80vw;
-        &.overview {
-            &-block {
-                grid-template-columns: repeat(4, 1fr);
-            }
-        }
+    .overview {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
     }
 }
 
 @include media-xl {
     .App-header {
-        width: 65vw;
+        width: 95vw;
         & h1,
         h2,
         h3 {
             font-size: 1.5rem;
         }
     }
-    #main {
-        width: 65vw;
-        &.overview {
-            &-block {
-                grid-template-columns: repeat(5, 1fr);
-            }
-        }
+    .overview {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
     }
 }
 
