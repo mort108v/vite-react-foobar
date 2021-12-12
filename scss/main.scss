@@ -92,6 +92,7 @@ button {
     align-content: center;
     margin: 0 auto;
     margin-top: 4.5vh;
+    margin-bottom: 1.5vh;
     padding: 10px;
     border: 2px solid set-text-color($primaryColor);
     border-radius: 10px;
@@ -123,7 +124,7 @@ table {
 
 footer {
     font-size: 1rem;
-    position: fixed;
+    position: relative;
     width: 100%;
     height: 3rem;
     background: linear-gradient( to top, rgba($primaryColor, 1.0), rgba($primaryColor, 0.0)), url('') center top;
