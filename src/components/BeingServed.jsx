@@ -1,4 +1,4 @@
-import TableComponent from "./TableComponent";
+import DivBlockComponent from "./DivBlockComponent";
 import { useState } from "react";
 import moment from "moment";
 
@@ -10,9 +10,9 @@ const BeingServed = (props) => {
 
   const [hide, setHide] = useState(false);
 
-  const theadData = ["ID", "Time since order", "Order", "Price"];
-  const tableName = "beingServed-table";
-  const theadName = "beingServed-table__thead";
+  const divHeadData = ["ID", "Order", "Time ago", "Price"];
+  const divBlockName = "overview-block__serving--bottom";
+  const divHeadName = "overview-block__serving--head";
 
   const beingServedList = props.serving.map((serve) => {
     let momentInTime = props.timestamp;
@@ -24,7 +24,6 @@ const BeingServed = (props) => {
       id: serve.id,
       items: [
         serve.id,
-        orderDurationFormatted,
         <>
           {serve.order.map((item, index) => {
             return (
@@ -34,32 +33,36 @@ const BeingServed = (props) => {
             );
           })}
         </>,
+        orderDurationFormatted,
         "Price here",
       ],
     };
   });
   return (
     <>
-      <div className="overview-header__top">
-        <h3 className="overview-header__title" onClick={() => setHide(!hide)}>
-          {"Serving "}
-          {hide ? (
-            <i className="fa fa-arrow-circle-up" aria-hidden="true"></i>
-          ) : (
-            <i className="fa fa-arrow-circle-down" aria-hidden="true"></i>
-          )}
-        </h3>
+      <div className="overview-header__serving">
+        <div
+          className="overview-header__serving--title"
+          onClick={() => setHide(!hide)}
+        >
+          <p className="overview-header__serving--title-name">{"Serving "}</p>
+          <p className="overview-header__serving--title-arrow">
+            {hide ? (
+              <i className="fa fa-arrow-circle-up" aria-hidden="true"></i>
+            ) : (
+              <i className="fa fa-arrow-circle-down" aria-hidden="true"></i>
+            )}
+          </p>
+        </div>
       </div>
       {hide ? (
-        <div className="overview-block">
-          <div>
-            <TableComponent
-              theadData={theadData}
-              tbodyData={beingServedList}
-              theadName={theadName}
-              tableName={tableName}
-            />
-          </div>
+        <div className="overview-block__serving">
+          <DivBlockComponent
+            divHeadData={divHeadData}
+            divBodyData={beingServedList}
+            divHeadName={divHeadName}
+            divBlockName={divBlockName}
+          />
         </div>
       ) : null}
     </>

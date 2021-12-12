@@ -1,4 +1,4 @@
-import TableComponent from "./TableComponent";
+import DivBlockComponent from "./DivBlockComponent";
 import { useState } from "react";
 
 const BeerStorage = (props) => {
@@ -8,9 +8,9 @@ const BeerStorage = (props) => {
 
   const [hide, setHide] = useState(false);
 
-  const theadData = ["Name", "Kegs left", "Sold out"];
-  const tableName = "Taps-table";
-  const theadName = "Taps-table__thead";
+  const divHeadData = ["Name", "Kegs left", "Sold out"];
+  const divBlockName = "overview-block__storage--bottom";
+  const divHeadName = "overview-block__storage--head";
 
   const storageList = props.storage.map((beerType, index) => {
     return {
@@ -21,26 +21,31 @@ const BeerStorage = (props) => {
   });
   return (
     <>
-      <div className="overview-header__top">
-        <h3 className="overview-header__title" onClick={() => setHide(!hide)}>
-          {"Beer storage "}
-          {hide ? (
-            <i className="fa fa-arrow-circle-up" aria-hidden="true"></i>
-          ) : (
-            <i className="fa fa-arrow-circle-down" aria-hidden="true"></i>
-          )}
-        </h3>
+      <div className="overview-header__storage">
+        <div
+          className="overview-header__storage--title"
+          onClick={() => setHide(!hide)}
+        >
+          <p className="overview-header__storage--title--name">
+            {"Beer storage "}
+          </p>
+          <p className="overview-header__storage--title--arrow">
+            {hide ? (
+              <i className="fa fa-arrow-circle-up" aria-hidden="true"></i>
+            ) : (
+              <i className="fa fa-arrow-circle-down" aria-hidden="true"></i>
+            )}
+          </p>
+        </div>
       </div>
       {hide ? (
-        <div className="overview-block">
-          <div>
-            <TableComponent
-              theadData={theadData}
-              tbodyData={storageList}
-              theadName={theadName}
-              tableName={tableName}
-            />
-          </div>
+        <div className="overview-block__storage">
+          <DivBlockComponent
+            divHeadData={divHeadData}
+            divBodyData={storageList}
+            divHeadName={divHeadName}
+            divBlockName={divBlockName}
+          />
         </div>
       ) : null}
     </>

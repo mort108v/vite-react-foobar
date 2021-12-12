@@ -90,9 +90,9 @@ const App = () => {
             onClick={() => setDarkTheme(!darkTheme)}
           >
             {darkTheme ? (
-              <i class="fa fa-sun fa-1x" aria-hidden="true"></i>
+              <i className="fa fa-sun fa-1x" aria-hidden="true"></i>
             ) : (
-              <i class="fa fa-moon fa-1x" aria-hidden="true"></i>
+              <i className="fa fa-moon fa-1x" aria-hidden="true"></i>
             )}
           </button>
         </div>
@@ -100,20 +100,32 @@ const App = () => {
       </header>
       <section id="main">
         <section id="overview">
-          <ParallaxComponent />
-          <BeingServed
-            serving={allData.serving}
-            timestamp={allData.timestamp}
-            startTime={allData.serving.startTime}
-          />
-          <Taps taps={allData.taps} />
-          <Bartenders bartenders={allData.bartenders} />
-          <BeerStorage storage={allData.storage} />
-          <BeingQueued
-            queue={allData.queue}
-            timestamp={allData.timestamp}
-            startTime={allData.queue.startTime}
-          />
+          <div className="overview-header">
+            <ParallaxComponent />
+          </div>
+          <div className="overview-header">
+            <BeingServed
+              serving={allData.serving}
+              timestamp={allData.timestamp}
+              startTime={allData.serving.startTime}
+            />
+          </div>
+          <div className="overview-header">
+            <Bartenders bartenders={allData.bartenders} />
+          </div>
+          <div className="overview-header">
+            <Taps taps={allData.taps} />
+          </div>
+          <div className="overview-header">
+            <BeerStorage storage={allData.storage} />
+          </div>
+          <div className="overview-header">
+            <BeingQueued
+              queue={allData.queue}
+              timestamp={allData.timestamp}
+              startTime={allData.queue.startTime}
+            />
+          </div>
         </section>
       </section>
       <section id="bottom">
