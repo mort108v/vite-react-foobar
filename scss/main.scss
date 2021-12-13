@@ -129,4 +129,8 @@ footer {
 i {
     align-self: right;
     text-align: right;
+    @include transition-ease;
+    &:hover {
+        color: $orange;
+    }
 }

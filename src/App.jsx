@@ -90,9 +90,13 @@ const App = () => {
             onClick={() => setDarkTheme(!darkTheme)}
           >
             {darkTheme ? (
-              <i className="fa fa-sun fa-1x" aria-hidden="true"></i>
+              <h3>
+                <i className="fa fa-sun fa-1x" aria-hidden="true"></i>
+              </h3>
             ) : (
-              <i className="fa fa-moon fa-1x" aria-hidden="true"></i>
+              <h3>
+                <i className="fa fa-moon fa-1x" aria-hidden="true"></i>
+              </h3>
             )}
           </button>
         </div>

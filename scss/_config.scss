@@ -86,10 +86,10 @@ html::-webkit-scrollbar-track:hover {
 
 @function set-header-color($color) {
     @if (lightness($color) > 40%) {
-        @return $headerColor;
+        @return $secondaryColor;
     }
     @else {
-        @return $primaryColor;
+        @return $orange;
     }
 }
 
