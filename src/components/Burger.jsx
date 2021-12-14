@@ -3,6 +3,7 @@ import Nav from "./Nav";
 const Burger = () => {
   const [open, setOpen] = useState(true);
   return (
+    // Open Burger
     <>
       <div className="menu-btn" onClick={() => setOpen(!open)}>
         {open ? (
@@ -13,6 +14,7 @@ const Burger = () => {
       </div>
       {open ? <Nav open={open} /> : null}
     </>
+    // And then open Nav
   );
 };
 

@@ -1,4 +1,5 @@
 const Nav = (props) => {
+  // Set className to "open" for animation and visibillity
   let className = "menu-nav__item";
   if (props.open) {
     className += " open";
@@ -6,11 +7,11 @@ const Nav = (props) => {
   return (
     <nav className="nav open">
       <ul className="menu-nav open">
-        <li className={className}>
-          <a href="#!" className="menu-nav__link ">
+        {/* <li className={className}>
+          <a href="#!" className="menu-nav__link signin-btn">
             {"Sign In!"}
           </a>
-        </li>
+        </li> */}
         <li className={className}>
           <a href="#!" className="menu-nav__link signup-btn">
             {"Sign Up!"}
