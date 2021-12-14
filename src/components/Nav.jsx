@@ -1,7 +1,7 @@
 const Nav = (props) => {
   let className = "menu-nav__item";
   if (props.open) {
-    className += "menu-nav__item open";
+    className += " open";
   }
   return (
     <nav className="nav open">
