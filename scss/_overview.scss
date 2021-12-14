@@ -352,7 +352,7 @@
         &__queued {
             &--head {
                 display: grid;
-                grid-template-columns: 1fr 3fr 1fr 1fr;
+                grid-template-columns: 1fr 2fr 1fr 1fr;
                 padding: .5rem 0 .5rem 0;
                 color: set-header-color($headerColor);
                 padding-left: 10px;
@@ -374,7 +374,7 @@
             &--bottom {
                 & .__data--row {
                     display: grid;
-                    grid-template-columns: 1fr 3fr 1fr 1fr;
+                    grid-template-columns: 1fr 2fr 1fr 1fr;
                     padding: .7rem 0 .7rem 0;
                     border: 2px solid set-borderLine-color($orange);
                     border-radius: 10px;
@@ -398,23 +398,15 @@
         &__user {
             &--head {
                 display: grid;
-                grid-template-columns: 1fr 1fr 2fr;
+                grid-template-columns: 1fr 1fr 3fr;
                 padding: .5rem 0 .5rem 0;
                 color: set-header-color($headerColor);
                 & .head-item:first-of-type {
                     padding-left: 10px;
                     text-align: left;
                 }
-                & .head-item:nth-last-of-type(4) {
-                    text-align: left;
-                    padding-left: 0px;
-                }
-                & .head-item:nth-last-of-type(3) {
-                    padding-left: 0px;
-                    text-align: left;
-                }
                 & .head-item:nth-last-of-type(2) {
-                    text-align: right;
+                    text-align: left;
                 }
                 & .head-item:last-of-type {
                     text-align: right;
@@ -423,7 +415,7 @@
             }
             & .__data--row {
                 display: grid;
-                grid-template-columns: 1fr 1fr 2fr;
+                grid-template-columns: 1fr 1fr 3fr;
                 padding: .7rem 0 .7rem 0;
                 border: 2px solid set-borderLine-color($orange);
                 border-radius: 10px;
@@ -437,15 +429,7 @@
                     text-align: left;
                 }
                 &-2 {
-                    text-align: left;
-                }
-                &-3 {
                     text-align: right;
-                }
-                &-4 {
-                    text-align: right;
-                    padding-right: 10px;
-                    vertical-align: bottom;
                 }
             }
         }
