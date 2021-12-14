@@ -3,6 +3,7 @@
 @import 'fonts';
 @import 'responsive';
 @import 'buttons';
+@import 'menu';
 #root {
     $background-color: #16152b;
     $text-color: #CACEFC;
@@ -51,9 +52,9 @@ button {
     vertical-align: center;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: 2fr 2fr 1fr 2fr 1fr;
     column-gap: 10px;
-    color: ($secondaryColor);
+    color: var(--text-color);
     background: linear-gradient( to right, rgba($headerColor, 0.3), rgba($primaryColor, 1), rgba($headerColor, 0.3));
     border: 2px solid set-text-color($primaryColor);
     border-radius: 10px;
@@ -109,16 +110,16 @@ button {
 // *.__data--row {
 //     @include transition-ease;
 // }
-footer {
+#bottom {
     font-size: 1rem;
     position: relative;
     width: 100%;
     height: 3rem;
     background: linear-gradient( to top, rgba($primaryColor, 1.0), rgba($primaryColor, 0.0)), url('') center top;
-    bottom: 0.4rem;
     text-align: right;
     color: set-header-color($headerColor);
-    padding: 1.3rem;
+    padding-right: 2.5vw;
+    bottom: .01rem;
 }
 
 .hide {

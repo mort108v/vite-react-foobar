@@ -1,6 +1,5 @@
 import DivBlockComponent from "./DivBlockComponent";
 import NewDoingState from "./NewDoingState";
-import { v4 as uuidv4 } from "uuid";
 import { useState } from "react";
 
 const Bartenders = (props) => {
@@ -14,10 +13,10 @@ const Bartenders = (props) => {
   const divBlockName = "overview-block__bartender--bottom";
   const divHeadName = "overview-block__bartender--head";
 
-  const bartenderList = props.bartenders.map((bartender) => {
+  const bartenderList = props.bartenders.map((bartender, index) => {
     return {
-      id: uuidv4(),
-      key: uuidv4(),
+      id: index,
+      key: index,
       items: [
         bartender.name,
         bartender.status,
