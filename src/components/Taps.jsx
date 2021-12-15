@@ -8,7 +8,7 @@ const Taps = (props) => {
 
   const [hide, setHide] = useState(false);
 
-  const divHeadData = ["ID", "Level", "Capacity", "Beertype", "In use"];
+  const divHeadData = ["ID", "Beertype", "Capacity", "Level", "In use"];
   const divBlockName = "overview-block__taps--bottom";
   const divHeadName = "overview-block__taps--head";
   const tapsList = props.taps.map((tap) => {

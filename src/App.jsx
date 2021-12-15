@@ -18,6 +18,7 @@ import Taps from "./components/Taps";
 import BeerStorage from "./components/BeerStorage";
 import TimeTick from "./components/TimeTick";
 import Barinfo from "./components/Barinfo";
+import NewOrder from "./components/NewOrder";
 // import toggleForm from "./components/toggleForm";
 // import NewUser from "./components/NewUser";
 import Users from "./components/Users";
@@ -184,6 +185,11 @@ const App = () => {
           <div className="overview-header">
             <div className="wrapper">
               <Users users={customers.users} />
+            </div>
+          </div>
+          <div className="overview-header">
+            <div className="wrapper">
+              <NewOrder storage={allData.storage} taps={allData.taps} />
             </div>
           </div>
         </div>
