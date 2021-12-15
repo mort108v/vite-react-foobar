@@ -7,40 +7,58 @@ const NewOrder = (props) => {
     return null;
   }
 
+  let total = "112$";
+
+  const tapsList = props.taps.map((tap, index) => {
+    return {
+      id: index,
+      key: index,
+      items: [tap.beer],
+    };
+  });
+
+  const priceList = props.prices.map((beerPrice, index) => {
+    return {
+      id: index,
+      key: index,
+      name: beerPrice.name,
+      price: beerPrice.price,
+      count: beerPrice.orderCount,
+    };
+  });
+
   const [hide, setHide] = useState(false);
-  const [count, setCount] = useState(0);
-  // const [totalPrice, setTotalPrice] = useState({
-  //   totalNum: [],
+
+  function initialOrderCount() {
+    const priceCount = priceList.map((initCount) => {
+      return {
+        name: initCount.name,
+        count: initCount.count,
+      };
+    });
+  }
+
+  const [orderCount, setOrderCount] = useState(initialOrderCount());
+  const [totalPrice, setTotalPrice] = useState({
+    totalPrice: [],
+  });
+  // const [notForSale, setNotForSale] = useState({
+  //   beersNotForSale: [],
   // });
 
-  // const tapsList = props.taps.map((tap, index) => {
-  //   return {
-  //     id: index,
-  //     key: index,
-  //     items: [tap.beer],
-  //   };
-  // });
+  function decrementCount() {
+    setOrderCount((prevOrderCount) => {
+      return { ...prevOrderCount, count: prevOrderCount - 1 };
+    });
+  }
+  function incrementCount(beer) {
+    setOrderCount((prevOrderCount) => {
+      return { ...prevOrderCount, count: prevOrderCount + 1 };
+    });
+  }
 
-  // const priceList = props.prices.map((beerPrice, index) => {
-  //   return {
-  //     id: index,
-  //     key: index,
-  //     name: beerPrice.name,
-  //     price: beerPrice.price,
-  //     count: beerPrice.orderCount,
-  //   };
-  // });
+  setOrderCount(priceList.name, priceList.count);
 
-  // function decrementCount() {
-  //   setOrderCount((prevOrderCount) => {
-  //     return { ...prevOrderCount, count: prevOrderCount - 1 };
-  //   });
-  // }
-  // function incrementCount() {
-  //   setOrderCount((prevOrderCount) => {
-  //     return { ...prevOrderCount, count: prevOrderCount + 1 };
-  //   });
-  // }
   // console.log(priceList);
   const beersPictureURL = "./images/beers/";
 
@@ -64,8 +82,8 @@ const NewOrder = (props) => {
     return {
       id: index,
       key: index,
-      // lowerName: beerName,
-      count: count,
+      lowerName: beerName,
+      // count: beer.count,
       items: [
         beer.name,
         <>
@@ -78,26 +96,36 @@ const NewOrder = (props) => {
             className={(beerName, " beer")}
           ></img>
         </>,
-        // <>
-        //   <button className={("decre ", beerName)} onClick={decrementCount()}>
-        //     {"-"}
-        //   </button>
-        //   <span>{count}</span>
-        //   <button className={("incre ", beerName)} onClick={incrementCount()}>
-        //     {"+"}
-        //   </button>
-        // </>,
+        <>
+          <button
+            className={("decre ", beerName)}
+            onClick={decrementCount(this.beerNameFull)}
+          >
+            {"-"}
+          </button>
+          <span>{orderCount}</span>
+          <button
+            className={("incre ", beerName)}
+            onClick={incrementCount(this.beerNameFull)}
+          >
+            {"+"}
+          </button>
+        </>,
         // beerPrice,
       ],
     };
   });
+  // console.log(beersList, " Beers");
 
-  // function decrementCount() {
-  //   setCount(count - 1);
-  // }
-  // function incrementCount() {
-  //   setCount(count + 1);
-  // }
+  // useEffect(() => {
+  //   setForSale(tapsList);
+  //   console.log(tapsList);
+  // }, []);
+
+  // useEffect(() => {
+  //   setNotForSale(beersList);
+  //   console.log(beersList);
+  // }, []);
 
   const divHeadData = ["Beername", "Image", "Price"];
   const divHeadName = "overview-block__order--head";
@@ -133,7 +161,7 @@ const NewOrder = (props) => {
             />
           </div>
           <div className="overview-block__order--total">{"Total Price: "}</div>
-          {/* <div>{totalPrice.totalNum}</div> */}
+          <div>{total}</div>
         </>
       ) : null}
     </>

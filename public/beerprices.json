@@ -1,0 +1,17 @@
+{
+    "prices": [{
+            "name": "El Hefe",
+            "price": 8,
+            "orderCount": 0
+        },
+        { "name": "Fairy Tale Ale", "price": 7, "orderCount": 0 },
+        { "name": "GitHop", "price": 9, "orderCount": 0 },
+        { "name": "Hollaback Lager", "price": 11, "orderCount": 0 },
+        { "name": "Hoppily Ever After", "price": 11, "orderCount": 0 },
+        { "name": "Mowintime", "price": 13, "orderCount": 0 },
+        { "name": "Row 26", "price": 8, "orderCount": 0 },
+        { "name": "Ruined Childhood", "price": 6, "orderCount": 0 },
+        { "name": "Sleighride", "price": 7, "orderCount": 0 },
+        { "name": "Steampunk", "price": 10, "orderCount": 0 }
+    ]
+}

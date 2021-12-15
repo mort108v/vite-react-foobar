@@ -28,7 +28,7 @@ import ParallaxComponent from "./components/ParallaxComponent";
 const BASE_URL = "https://six-foobar.herokuapp.com";
 
 const App = () => {
-  // My Consts
+  // My States
   const [darkTheme, setDarkTheme] = useState(true);
   const myTime = moment().format("HH:mm:ss");
   const [allData, setAllData] = useState({
@@ -43,20 +43,24 @@ const App = () => {
   const [customers, setCustomers] = useState({
     users: [],
   });
+  const [prices, setPrices] = useState({
+    prices: [],
+  });
+  const [momentInTime, setMomentInTime] = useState();
+
+  // User database info (Should be moved)
   const USERAPI_KEY = "61884d7afc71545b0f5e05ad";
   const USERBASE_URL = "https://users-a042.restdb.io";
   const USERREST_URL = "/rest/gamers";
-  const [momentInTime, setMomentInTime] = useState();
-  // const [showMenu, setShowMenu] = useState(false);
-  // const nav = document.querySelector(".nav");
-
-  // My Functions
-
-  // const handleToggle = () => {
-  //   setShowMenu(!showMenu);
-  // };
 
   // My useEffects
+
+  // Prices and count state from local JSON
+  useEffect(() => {
+    getPriceData();
+  }, []);
+
+  // Switch color theme
   useEffect(() => {
     const root = document.documentElement;
     root?.style.setProperty(
@@ -66,12 +70,14 @@ const App = () => {
     root?.style.setProperty("--text-color", darkTheme ? "#CACEFC" : "#16152b");
   }, [darkTheme]);
 
+  // Time
   useEffect(() => {
     setInterval(() => {
       setMomentInTime(myTime);
     }, 1000);
   }, []);
 
+  // Bar data
   useEffect(() => {
     const getAllData = async () => {
       const dataFromServer = await fetchData();
@@ -85,6 +91,7 @@ const App = () => {
     }, 1000);
   }, []);
 
+  // Users
   useEffect(() => {
     const getUsers = async () => {
       const usersFromServer = await fetchUsers();
@@ -118,6 +125,24 @@ const App = () => {
     return userData;
   };
 
+  // fETCH Prices
+  const getPriceData = () => {
+    fetch("beerprices.json", {
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+    })
+      .then(function (response) {
+        console.log(response);
+        return response.json();
+      })
+      .then(function (myJson) {
+        console.log(myJson);
+        setPrices(myJson);
+      });
+  };
+
   // Injecting the App
   return (
     <div className="App">
@@ -142,7 +167,7 @@ const App = () => {
         </div>
         <TimeTick timeRightNow={myTime} closingTime={allData.bar.closingTime} />
         <Burger />
-        {/* <Nav /> */}
+        {/* Burger injects Nav */}
       </header>
       <div id="main" className="">
         <div className="overview-header-top">
@@ -189,7 +214,12 @@ const App = () => {
           </div>
           <div className="overview-header">
             <div className="wrapper">
-              <NewOrder storage={allData.storage} taps={allData.taps} />
+              {/* Pun intended */}
+              <NewOrder
+                storage={allData.storage}
+                taps={allData.taps}
+                prices={prices.prices}
+              />
             </div>
           </div>
         </div>
