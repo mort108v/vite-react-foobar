@@ -1,9 +1,8 @@
 import DivBlockComponent from "./DivBlockComponent";
-import AddOrder from "./AddOrder";
 import { useState, useReducer } from "react";
 import { ACTIONS } from "../App";
 
-const NewOrder = (props) => {
+const NewOrder = (props, { onAdd }) => {
   // console.log(props);
   if (!props) {
     return null;
@@ -19,6 +18,21 @@ const NewOrder = (props) => {
         return state;
     }
   }
+  const [text, setText] = useState("");
+  const [price, setPrice] = useState("");
+  const [cartet, setCartet] = useState(false);
+
+  const onSubmit = (e) => {
+    e.preventDefault();
+
+    if (!text) {
+      return null;
+    }
+    onAdd({ text, price, cartet });
+    setText("");
+    setPrice("");
+    setCartet(false);
+  };
 
   const initCount = {
     "El Hefe": 0,
@@ -46,15 +60,12 @@ const NewOrder = (props) => {
   //   };
   // });
 
-  const priceList = props.prices.map((beerPrice, index) => {
-    return {
-      id: index,
-      key: index,
-      name: beerPrice.name,
-      price: beerPrice.price,
-      count: beerPrice.orderCount,
-    };
-  });
+  // const priceList = props.prices.map((beerPrice, index) => {
+  //   return {
+  //     // name: beerPrice.name,
+  //     price: beerPrice.name.price,
+  //   };
+  // });
 
   function decrementCount() {
     dispatch({ type: ACTIONS.DECREMENT });
@@ -81,60 +92,67 @@ const NewOrder = (props) => {
 
     const beerName = beerNameFull.toLowerCase();
     const beerImage = beersPictureURL + beerName + ".png";
-
+    const name = beer.name;
+    const amount = state.count;
     return {
       id: index,
       key: index,
-      // lowerName: beerName,
-      // count: count,
+
       items: [
-        beer.name,
         <>
-          <img
-            type="image"
-            src={beerImage}
-            alt={beerName}
-            width="70"
-            height="70"
-            className={(beerName, " beer")}
-          ></img>
-        </>,
-        <>
-          <button
-            style={{ width: "30px" }}
-            className={"decrement"}
-            onClick={() => decrementCount()}
-          >
-            {"-"}
-          </button>
-          <form>
+          <form className="add-form" onSubmit={onSubmit}>
+            <div className="form-control">
+              <label
+                type="text"
+                value={name}
+                onChange={(e) => setText(e.target.value)}
+              >
+                {beer.name}
+              </label>
+            </div>
+            <img
+              type="image"
+              src={beerImage}
+              alt={beerName}
+              width="70"
+              height="70"
+              className={(beerName, " beer")}
+            ></img>
+            <button
+              style={{ width: "30px" }}
+              className={"decrement"}
+              onClick={() => decrementCount()}
+            >
+              {"-"}
+            </button>
+            <div className="form-control">
+              <label>{"Amount: "}</label>
+              <input
+                style={{ width: "30px", textAlign: "center" }}
+                type={ACTIONS}
+                value={amount}
+                onChange={(e) => setPrice(e.target.value)}
+              />
+            </div>
+            <button
+              style={{ width: "30px" }}
+              className={"increment"}
+              onClick={() => incrementCount()}
+            >
+              {"+"}
+            </button>
+            <div>{totalPrice}</div>
             <input
-              style={{ width: "30px", textAlign: "center" }}
-              type={ACTIONS}
-              value={state.count}
-              onChange={(e) => setThisValue(e.target.value)}
+              className="btn btn-block"
+              type="submit"
+              value="Submit order"
             />
           </form>
-
-          <button
-            style={{ width: "30px" }}
-            className={"increment"}
-            onClick={() => incrementCount()}
-          >
-            {"+"}
-          </button>
         </>,
-        "Price: ",
+        // <>{("Price: ", priceList.price)}</>,
       ],
     };
   });
-
-  // function decrementCount() {
-  //   setCount(count - 1);
-  // }
-  // function incrementCount() {
-  //   setCount(count + 1);
-  // }
 
   const divHeadData = ["Beername", "Image", "Price"];
   const divHeadName = "overview-block__order--head";
@@ -167,9 +185,6 @@ const NewOrder = (props) => {
               divBlockName={divBlockName}
             />
           </div>
-
-          <AddOrder />
-          <div>{totalPrice}</div>
         </>
       ) : null}
     </>

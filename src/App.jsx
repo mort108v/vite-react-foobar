@@ -18,6 +18,7 @@ import BeerStorage from "./components/BeerStorage";
 import TimeTick from "./components/TimeTick";
 import Barinfo from "./components/Barinfo";
 import NewOrder from "./components/NewOrder";
+import OrderKiller from "./components/OrderKiller";
 // import toggleForm from "./components/toggleForm";
 // import NewUser from "./components/NewUser";
 import Users from "./components/Users";
@@ -25,7 +26,7 @@ import Users from "./components/Users";
 import ParallaxComponent from "./components/ParallaxComponent";
 
 // Bar data URL
-const BASE_URL = "https://six-foobar.herokuapp.com";
+export const BASE_URL = "https://six-foobar.herokuapp.com";
 // User database info (Should be stored in ENV file)
 const USERAPI_KEY = "61884d7afc71545b0f5e05ad";
 const USERBASE_URL = "https://users-a042.restdb.io";
@@ -140,11 +141,9 @@ const App = () => {
       },
     })
       .then(function (response) {
-        console.log(response);
         return response.json();
       })
       .then(function (myJson) {
-        console.log(myJson);
         setPrices(myJson);
       });
   };
@@ -221,7 +220,7 @@ const App = () => {
           <div className="overview-header">
             <div className="wrapper">
               {/* Pun intended */}
-              <NewOrder
+              <OrderKiller
                 storage={allData.storage}
                 taps={allData.taps}
                 prices={prices.prices}

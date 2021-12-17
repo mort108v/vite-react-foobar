@@ -13,7 +13,7 @@ const Order = ({ order, onDelete, onToggle }) => {
           onClick={() => onDelete(order.id)}
         />
       </p>
-      <p>{order.price} </p>
+      <p>{order.amount} </p>
     </div>
   );
 };
