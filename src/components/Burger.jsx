@@ -3,7 +3,7 @@ import Nav from "./Nav";
 const Burger = () => {
   const [open, setOpen] = useState(true);
   return (
-    // Open Burger
+    // Open Burger and animate
     <>
       <div className="menu-btn" onClick={() => setOpen(!open)}>
         {open ? (

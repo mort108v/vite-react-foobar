@@ -10,7 +10,6 @@ const DivBlockComponent = ({
   divHeadName,
 }) => {
   return (
-    // <div className={divHeadName}>
     <>
       <div className={divHeadName}>
         {divHeadData.map((divHead, index) => {
@@ -23,7 +22,6 @@ const DivBlockComponent = ({
         })}
       </div>
     </>
-    // </div>
   );
 };
 

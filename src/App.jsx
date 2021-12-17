@@ -11,7 +11,6 @@ import "../scss/main.scss";
 import Bartenders from "./components/Bartenders";
 import Social from "./components/Social";
 import Burger from "./components/Burger";
-// import Nav from "./components/Nav";
 import BeingServed from "./components/BeingServed";
 import BeingQueued from "./components/BeingQueued";
 import Taps from "./components/Taps";
@@ -25,7 +24,17 @@ import Users from "./components/Users";
 // import CollectUserData from "./components/CollectUserData";
 import ParallaxComponent from "./components/ParallaxComponent";
 
+// Bar data URL
 const BASE_URL = "https://six-foobar.herokuapp.com";
+// User database info (Should be stored in ENV file)
+const USERAPI_KEY = "61884d7afc71545b0f5e05ad";
+const USERBASE_URL = "https://users-a042.restdb.io";
+const USERREST_URL = "/rest/gamers";
+
+export const ACTIONS = {
+  INCREMENT: "increment",
+  DECREMENT: "decrement",
+};
 
 const App = () => {
   // My States
@@ -48,11 +57,6 @@ const App = () => {
   });
   const [momentInTime, setMomentInTime] = useState();
 
-  // User database info (Should be moved)
-  const USERAPI_KEY = "61884d7afc71545b0f5e05ad";
-  const USERBASE_URL = "https://users-a042.restdb.io";
-  const USERREST_URL = "/rest/gamers";
-
   // My useEffects
 
   // Prices and count state from local JSON
@@ -69,6 +73,8 @@ const App = () => {
     );
     root?.style.setProperty("--text-color", darkTheme ? "#CACEFC" : "#16152b");
   }, [darkTheme]);
+
+  // localStorage.getItem("darkTheme");
 
   // Time
   useEffect(() => {

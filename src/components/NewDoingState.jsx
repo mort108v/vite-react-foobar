@@ -3,7 +3,7 @@ const NewDoingState = (props) => {
   if (!props) {
     return null;
   }
-
+  // Change data from server to redable text from users
   const currentDoingState = props.statusDetail;
 
   const DOING_STATES = {

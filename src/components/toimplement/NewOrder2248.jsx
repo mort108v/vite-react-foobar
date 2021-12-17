@@ -1,5 +1,4 @@
 import DivBlockComponent from "./DivBlockComponent";
-import AddOrder from "./AddOrder";
 import { useState, useReducer } from "react";
 import { ACTIONS } from "../App";
 
@@ -20,22 +19,9 @@ const NewOrder = (props) => {
     }
   }
 
-  const initCount = {
-    "El Hefe": 0,
-    "Fairy Tale Ale": 0,
-    GitHop: 0,
-    "Hollaback Lager": 0,
-    "Hoppily Ever After": 0,
-    Movintime: 0,
-    Sleighride: 0,
-    Steampunk: 0,
-  };
-
-  const [state, dispatch] = useReducer(reducer, {
-    count: 0,
-  });
+  const [state, dispatch] = useReducer(reducer, { count: 0 });
   const [hide, setHide] = useState(true);
-  const [amount, setAmount] = useState();
+
   const [totalPrice, setTotalPrice] = useState(0);
 
   // const tapsList = props.taps.map((tap, index) => {
@@ -46,15 +32,15 @@ const NewOrder = (props) => {
   //   };
   // });
 
-  const priceList = props.prices.map((beerPrice, index) => {
-    return {
-      id: index,
-      key: index,
-      name: beerPrice.name,
-      price: beerPrice.price,
-      count: beerPrice.orderCount,
-    };
-  });
+  // const priceList = props.prices.map((beerPrice, index) => {
+  //   return {
+  //     id: index,
+  //     key: index,
+  //     name: beerPrice.name,
+  //     price: beerPrice.price,
+  //     count: beerPrice.orderCount,
+  //   };
+  // });
 
   function decrementCount() {
     dispatch({ type: ACTIONS.DECREMENT });
@@ -100,31 +86,18 @@ const NewOrder = (props) => {
           ></img>
         </>,
         <>
-          <button
-            style={{ width: "30px" }}
-            className={"decrement"}
-            onClick={() => decrementCount()}
-          >
+          <button className={"decrement"} onClick={() => decrementCount()}>
             {"-"}
           </button>
-          <form>
-            <input
-              style={{ width: "30px", textAlign: "center" }}
-              type={ACTIONS}
-              value={state.count}
-              onChange={(e) => setThisValue(e.target.value)}
-            />
-          </form>
-
-          <button
-            style={{ width: "30px" }}
-            className={"increment"}
-            onClick={() => incrementCount()}
-          >
+          {/* <form>
+          <input type={number} value={state.count} onChange={e => {e.target}} >
+          </form> */}
+          <span>{state.count}</span>
+          <button className={"increment"} onClick={() => incrementCount()}>
             {"+"}
           </button>
         </>,
-        "Price: ",
+        // beerPrice,
       ],
     };
   });
@@ -167,8 +140,7 @@ const NewOrder = (props) => {
               divBlockName={divBlockName}
             />
           </div>
-
-          <AddOrder />
+          <div className="overview-block__order--total">{"Total Price: "}</div>
           <div>{totalPrice}</div>
         </>
       ) : null}

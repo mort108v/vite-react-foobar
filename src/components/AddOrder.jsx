@@ -1,57 +1,57 @@
 import { useState } from "react";
 
-const AddTask = ({ onAdd }) => {
+const AddOrder = ({ onAdd }) => {
   const [text, setText] = useState("");
-  const [day, setDay] = useState("");
-  const [reminder, setReminder] = useState(false);
+  const [price, setPrice] = useState("");
+  const [cartet, setCartet] = useState(false);
 
   const onSubmit = (e) => {
     e.preventDefault();
 
     if (!text) {
-      alert("Please add a task");
+      alert("Please add an order");
       return;
     }
-    onAdd({ text, day, reminder });
+    onAdd({ text, price, cartet });
     setText("");
-    setDay("");
-    setReminder(false);
+    setPrice("");
+    setCartet(false);
   };
 
   return (
     <div>
       <form className="add-form" onSubmit={onSubmit}>
         <div className="form-control">
-          <label>Task</label>
+          <label>Order</label>
           <input
             type="text"
-            placeholder="Add Task here"
+            placeholder="Add order here"
             value={text}
             onChange={(e) => setText(e.target.value)}
           />
         </div>
         <div className="form-control">
-          <label>Day & Time</label>
+          <label>Price</label>
           <input
             type="text"
-            placeholder="Add Day & Time here"
-            value={day}
-            onChange={(e) => setDay(e.target.value)}
+            placeholder=""
+            value={price}
+            onChange={(e) => setPrice(e.target.value)}
           />
         </div>
         <div className="form-control form-control-check">
-          <label>Reminder</label>
+          <label>cartet</label>
           <input
             type="checkbox"
-            checked={reminder}
-            value={reminder}
-            onChange={(e) => setReminder(e.currentTarget.checked)}
+            checked={cartet}
+            value={cartet}
+            onChange={(e) => setCartet(e.currentTarget.checked)}
           />
         </div>
-        <input className="btn btn-block" type="submit" value="Save Task" />
+        <input className="btn btn-block" type="submit" value="Submit order" />
       </form>
     </div>
   );
 };
 
-export default AddTask;
+export default AddOrder;

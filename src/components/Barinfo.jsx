@@ -1,5 +1,4 @@
 const Barinfo = (props) => {
-  // console.log(props.barName.bar.name);
   if (!props) {
     return null;
   }

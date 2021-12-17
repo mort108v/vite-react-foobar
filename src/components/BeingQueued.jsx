@@ -19,6 +19,7 @@ const BeingQueued = (props) => {
     let orderDuration = momentInTime - orderTime;
     let orderDurationFormatted = moment.utc(orderDuration).format("mm:ss");
 
+    // Return individual order
     return {
       id: q.id,
       items: [
@@ -33,10 +34,12 @@ const BeingQueued = (props) => {
           })}
         </>,
         orderDurationFormatted,
-        "Price here",
+        "Price $",
       ],
     };
   });
+
+  // Return Block element with Hide function
   return (
     <>
       <div className="overview-header__queued">

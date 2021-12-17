@@ -1,4 +1,4 @@
-import DivBlockComponent from "./DivBlockComponent";
+import DivBlockComponent from "../DivBlockComponent";
 import { useState, useEffect } from "react";
 
 const NewOrder = (props) => {

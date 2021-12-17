@@ -12,9 +12,7 @@ const TimeTick = (props) => {
   }
 
   let momentInTime = moment(props.timeRightNow, "HH:mm:ss");
-
   let closingTimeDiff = barClosing.subtract(momentInTime);
-
   let timeLeft = moment.utc(closingTimeDiff).format("HH:mm:ss");
 
   return (
@@ -25,5 +23,3 @@ const TimeTick = (props) => {
 };
 
 export default TimeTick;
-
-// https://app.uniswap.org/#/add/v2/0x2f141ce366a2462f02cea3d12cf93e4dca49e4fd/ETH
